@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocol Kits — Excell Nutrients | Clinically Curated Supplement Bundles UAE</title>
+<meta name="description" content="Condition-specific supplement protocol kits. Advanced Anti-Aging, Radiance & Brightening, Blood Sugar Balance, Vitality, Hormonal Balance, Brain & Focus. Free consultation with every kit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage:#2d6a4f;--sage-mid:#40916c;--sage-light:#74c69d;--sage-pale:#d8f3dc;--sage-ultra:#f0faf3;
+  --gold:#b5924c;--gold-mid:#c9a96e;--gold-pale:#fdf3e3;--gold-ultra:#fffbf4;
+  --ink:#0d1a14;--ink-soft:#3a4a41;--ink-muted:#6b7d72;
+  --cream:#faf8f4;--white:#ffffff;
+  --border:rgba(45,106,79,0.13);--border-mid:rgba(45,106,79,0.22);
+  --red:#b91c1c;--red-pale:#fef2f2;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-body:'DM Sans',sans-serif;--ff-mono:'DM Mono',monospace;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --r:10px;--r-lg:16px;--r-xl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(250,248,244,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 40px rgba(13,26,20,0.07)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:34px;height:34px;background:var(--sage);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:18px;height:18px}
+.logo-text{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.logo-text span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--sage)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.btn-lang{font-size:.72rem;font-weight:500;color:var(--ink-muted);background:none;border:1px solid var(--border);border-radius:20px;padding:5px 13px;cursor:pointer;transition:all .2s}
+.btn-lang:hover{border-color:var(--gold);color:var(--gold)}
+.btn-nav-cta{font-size:.75rem;font-weight:500;color:var(--white);background:var(--sage);border:none;border-radius:6px;padding:10px 18px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-nav-cta:hover{background:var(--sage-mid)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s var(--ease)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--ff-display);font-size:2rem;font-weight:300;color:var(--ink);text-decoration:none}
+.close-menu{position:absolute;top:24px;right:5vw;background:none;border:none;font-size:1.4rem;cursor:pointer}
+
+/* PAGE */
+.page-wrap{padding-top:68px;position:relative;z-index:1}
+
+/* HERO */
+.kits-hero{padding:56px 5vw 48px;background:var(--white);border-bottom:1px solid var(--border)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--gold)}
+.kits-hero h1{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;line-height:1.08;letter-spacing:-.02em;color:var(--ink);margin-bottom:.75rem}
+.kits-hero h1 em{font-style:italic;color:var(--sage)}
+.kits-hero p{font-size:.9rem;font-weight:300;color:var(--ink-muted);max-width:560px;line-height:1.7;margin-bottom:1.5rem}
+.hero-trust{display:flex;gap:10px;flex-wrap:wrap}
+.trust-pill{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--ink-muted);background:var(--white);border:1px solid var(--border);border-radius:20px;padding:5px 12px}
+.trust-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sage-light);flex-shrink:0}
+
+/* KIT SELECTOR */
+.kit-selector-wrap{position:sticky;top:68px;z-index:50;background:rgba(250,248,244,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5vw}
+.kit-selector{display:flex;gap:6px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
+.kit-selector::-webkit-scrollbar{display:none}
+.kit-tab{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:.78rem;font-weight:500;color:var(--ink-muted);background:none;border:1.5px solid var(--border);border-radius:var(--r);padding:9px 16px;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;text-decoration:none}
+.kit-tab:hover{border-color:var(--sage);color:var(--sage);background:var(--sage-ultra)}
+.kit-tab.active{background:var(--sage);color:white;border-color:var(--sage)}
+.kit-tab .kt-icon{font-size:14px}
+
+/* KIT PANELS */
+.kit-panel{display:none;padding:48px 5vw 60px;animation:fadeUp .4s var(--ease) both}
+.kit-panel.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* KIT LAYOUT */
+.kit-layout{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start;margin-bottom:48px}
+.kit-main{}
+.kit-kit-badge{display:inline-flex;align-items:center;gap:6px;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);background:var(--sage-pale);border:1px solid rgba(116,198,157,.4);border-radius:20px;padding:4px 12px;margin-bottom:1rem}
+.kit-name{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--ink);line-height:1.1;margin-bottom:.75rem;letter-spacing:-.02em}
+.kit-name em{font-style:italic;color:var(--sage)}
+.kit-tagline{font-size:1rem;font-weight:300;color:var(--ink-muted);line-height:1.7;margin-bottom:1.5rem;max-width:520px}
+.kit-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
+.kit-stat{background:var(--cream);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center}
+.kit-stat-val{font-family:var(--ff-display);font-size:1.6rem;font-weight:300;color:var(--sage);line-height:1}
+.kit-stat-label{font-size:.65rem;font-weight:500;color:var(--ink-muted);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+
+/* TABS */
+.detail-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:24px}
+.dtab{font-family:var(--ff-body);font-size:.8rem;font-weight:500;color:var(--ink-muted);background:none;border:none;border-bottom:2px solid transparent;padding:12px 18px;cursor:pointer;transition:all .2s;margin-bottom:-1px;white-space:nowrap}
+.dtab:hover{color:var(--sage)}
+.dtab.active{color:var(--sage);border-bottom-color:var(--sage)}
+.dtab-panel{display:none}
+.dtab-panel.active{display:block;animation:fadeUp .25s var(--ease) both}
+
+/* OVERVIEW TAB */
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.benefit-item{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r)}
+.benefit-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.benefit-text{font-size:.83rem;color:var(--ink-soft);line-height:1.55}
+.benefit-text strong{color:var(--ink);font-weight:500}
+.timeline-section{margin-bottom:1.5rem}
+.timeline-title{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px;display:block}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-row{display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+.tl-row:last-child{border-bottom:none}
+.tl-week{font-family:var(--ff-mono);font-size:.68rem;font-weight:500;color:var(--sage);width:70px;flex-shrink:0;padding-top:2px}
+.tl-text{font-size:.8rem;color:var(--ink-soft);line-height:1.55}
+
+/* SCIENCE TAB */
+.science-intro{font-size:.85rem;font-weight:300;color:var(--ink-soft);line-height:1.8;margin-bottom:1.5rem}
+.ingredient-science{display:flex;flex-direction:column;gap:12px}
+.ing-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.ing-card-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;gap:10px}
+.ing-card-header h4{font-family:var(--ff-display);font-size:1rem;font-weight:400;color:var(--ink)}
+.ing-dose{font-family:var(--ff-mono);font-size:.65rem;font-weight:500;color:var(--sage);background:var(--sage-pale);border-radius:20px;padding:3px 9px;flex-shrink:0}
+.ing-chevron{font-size:.7rem;color:var(--ink-muted);transition:transform .2s;flex-shrink:0}
+.ing-card.open .ing-chevron{transform:rotate(180deg)}
+.ing-body{display:none;padding:0 16px 14px;border-top:1px solid var(--border)}
+.ing-card.open .ing-body{display:block}
+.ing-mechanism{font-size:.78rem;color:var(--ink-soft);line-height:1.65;margin-top:12px;margin-bottom:8px}
+.ing-evidence{font-size:.72rem;color:var(--sage);background:var(--sage-ultra);border:1px solid rgba(116,198,157,.3);border-radius:var(--r);padding:8px 12px}
+
+/* HOW TO USE TAB */
+.protocol-visual{background:var(--ink);border-radius:var(--r-lg);padding:24px;margin-bottom:1.5rem}
+.pv-title{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px;display:block}
+.pv-stacks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pv-stack{}
+.pv-stack-label{font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-light);margin-bottom:10px;display:block}
+.pv-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);margin-bottom:6px}
+.pv-item-dot{width:6px;height:6px;border-radius:50%;background:var(--sage-light);flex-shrink:0}
+.pv-item-name{font-size:.78rem;color:rgba(255,255,255,.85)}
+.pv-item-dose{font-family:var(--ff-mono);font-size:.62rem;color:rgba(255,255,255,.4);margin-left:auto}
+.usage-steps{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.usage-step{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r)}
+.usage-num{width:24px;height:24px;border-radius:50%;background:var(--sage);color:white;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:500;flex-shrink:0;margin-top:1px}
+.usage-text{font-size:.83rem;color:var(--ink-soft);line-height:1.55}
+.usage-text strong{color:var(--ink);font-weight:500}
+.important-note{background:var(--gold-pale);border:1px solid rgba(181,146,76,.25);border-radius:var(--r);padding:13px 15px;font-size:.78rem;color:var(--ink-soft);line-height:1.6}
+.important-note strong{color:var(--gold);font-weight:500}
+
+/* REVIEWS TAB */
+.reviews-summary{display:flex;align-items:center;gap:24px;padding:20px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:20px}
+.review-avg{text-align:center}
+.review-num{font-family:var(--ff-display);font-size:3rem;font-weight:300;color:var(--ink);line-height:1}
+.review-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin:4px 0}
+.review-count{font-size:.72rem;color:var(--ink-muted)}
+.review-bars{flex:1}
+.rbar-row{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.rbar-label{font-size:.7rem;color:var(--ink-muted);width:36px;text-align:right;flex-shrink:0}
+.rbar-track{flex:1;height:5px;background:var(--cream);border-radius:3px;overflow:hidden}
+.rbar-fill{height:100%;background:var(--gold);border-radius:3px}
+.rbar-count{font-size:.7rem;color:var(--ink-muted);font-family:var(--ff-mono);width:24px;flex-shrink:0}
+.review-list{display:flex;flex-direction:column;gap:12px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px}
+.review-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:10px}
+.reviewer-name{font-size:.83rem;font-weight:500;color:var(--ink)}
+.reviewer-meta{font-size:.7rem;color:var(--ink-muted)}
+.review-rating{color:var(--gold);font-size:.85rem}
+.review-text{font-size:.82rem;color:var(--ink-soft);line-height:1.7}
+.review-tag{display:inline-flex;align-items:center;gap:4px;font-size:.62rem;font-weight:500;color:var(--sage);background:var(--sage-pale);border-radius:20px;padding:2px 8px;margin-top:8px}
+.verified-badge{font-size:.62rem;color:var(--sage);background:var(--sage-pale);border:1px solid rgba(116,198,157,.3);border-radius:4px;padding:2px 7px;margin-left:8px}
+
+/* PURCHASE CARD (sidebar) */
+.purchase-card{background:var(--white);border:1.5px solid var(--border-mid);border-radius:var(--r-xl);padding:26px;position:sticky;top:130px;box-shadow:0 8px 40px rgba(45,106,79,.08)}
+.purchase-card::before{content:'';position:absolute;top:-1px;left:28px;right:28px;height:2px;background:linear-gradient(90deg,var(--sage),var(--gold));border-radius:0 0 2px 2px}
+.pc-kit-name{font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:4px;line-height:1.2}
+.pc-tagline{font-size:.75rem;font-weight:300;color:var(--ink-muted);margin-bottom:20px;line-height:1.5}
+.pc-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.pc-price{font-family:var(--ff-display);font-size:2rem;font-weight:300;color:var(--ink);line-height:1}
+.pc-was{font-size:.85rem;color:var(--ink-muted);text-decoration:line-through}
+.pc-save{font-size:.72rem;font-weight:500;color:var(--sage);background:var(--sage-pale);border-radius:20px;padding:2px 9px}
+.pc-period{font-size:.72rem;color:var(--ink-muted);margin-bottom:16px}
+.pc-includes{margin-bottom:16px}
+.pc-includes-title{font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px;display:block}
+.pc-item{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.78rem;color:var(--ink-soft)}
+.pc-item:last-child{border-bottom:none}
+.pc-item::before{content:'✓';color:var(--sage);font-size:.7rem;font-weight:500;flex-shrink:0}
+.shopify-slot{background:var(--cream);border:1.5px dashed var(--border-mid);border-radius:var(--r);padding:12px;text-align:center;font-size:.72rem;color:var(--ink-muted);margin-bottom:10px;line-height:1.5}
+.btn-kit-buy{width:100%;padding:15px;background:var(--sage);color:white;border:none;border-radius:var(--r);font-family:var(--ff-display);font-size:1rem;font-weight:400;cursor:pointer;transition:all .2s;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-kit-buy:hover{background:var(--sage-mid);transform:translateY(-1px);box-shadow:0 6px 20px rgba(45,106,79,.2)}
+.btn-kit-wa{width:100%;padding:13px;background:#25D366;color:white;border:none;border-radius:var(--r);font-size:.83rem;font-weight:500;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s;margin-bottom:12px}
+.btn-kit-wa:hover{background:#1da851}
+.pc-free-consult{background:var(--gold-ultra);border:1px solid rgba(181,146,76,.2);border-radius:var(--r);padding:10px 12px;font-size:.72rem;color:var(--ink-soft);line-height:1.55;text-align:center;margin-bottom:12px}
+.pc-free-consult strong{color:var(--gold)}
+.pc-guarantees{display:flex;flex-direction:column;gap:6px}
+.pc-guarantee{display:flex;align-items:center;gap:7px;font-size:.7rem;color:var(--ink-muted)}
+.pc-guarantee::before{content:'✓';color:var(--sage);font-weight:500;flex-shrink:0}
+
+/* RELATED KITS */
+.related-section{border-top:1px solid var(--border);padding-top:48px}
+.section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:var(--ink);margin-bottom:24px;line-height:1.1}
+.section-title em{font-style:italic;color:var(--sage)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.related-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 20px;text-decoration:none;display:block;transition:all .25s var(--ease)}
+.related-card:hover{border-color:var(--sage-light);box-shadow:0 8px 28px rgba(45,106,79,.08);transform:translateY(-2px)}
+.rc-icon{font-size:2rem;margin-bottom:10px;display:block}
+.rc-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:5px}
+.rc-desc{font-size:.75rem;color:var(--ink-muted);line-height:1.5;margin-bottom:10px}
+.rc-price{font-family:var(--ff-mono);font-size:.82rem;font-weight:500;color:var(--sage)}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25D366;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:all .2s;animation:floatIn .6s .5s var(--ease) both}
+@keyframes floatIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:26px;height:26px}
+
+/* FOOTER */
+footer{background:var(--ink);padding:56px 5vw 28px;color:rgba(255,255,255,.5);position:relative;z-index:1;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.footer-brand .logo-f{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:white;margin-bottom:10px;display:block}
+.footer-brand .logo-f span{color:var(--gold)}
+.footer-brand p{font-size:.78rem;font-weight:300;line-height:1.65;margin-bottom:16px;max-width:240px}
+.footer-socials{display:flex;gap:8px}
+.social-btn{width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;font-size:.72rem;transition:all .2s}
+.social-btn:hover{border-color:var(--sage-light);color:var(--sage-light)}
+.footer-col h4{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:white}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.72rem}
+.cert-row{display:flex;gap:8px}
+.cert-tag{font-size:.65rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-light);background:rgba(116,198,157,.1);border:1px solid rgba(116,198,157,.2);border-radius:4px;padding:3px 9px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1024px){.kit-layout{grid-template-columns:1fr;gap:32px}.purchase-card{position:static}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links,.btn-lang{display:none}.hamburger{display:flex}.kit-stats{grid-template-columns:1fr 1fr}.pv-stacks{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.related-grid{grid-template-columns:1fr}.kit-stats{grid-template-columns:1fr}.dtab{padding:10px 12px;font-size:.72rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><div class="logo-mark"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3C10 3 6 6 6 10.5C6 13.5 7.8 16 10 16C12.2 16 14 13.5 14 10.5C14 6 10 3 10 3Z" fill="white" opacity=".9"/><path d="M10 7V16M8 10.5C8 10.5 9 9 10 9" stroke="rgba(45,106,79,0.6)" stroke-width="1" stroke-linecap="round"/></svg></div><span class="logo-text">Excell<span>.</span></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="kits.html" class="active">Protocol Kits</a></li>
+    <li><a href="education.html">Learn</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="loyalty.html">Rewards</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-lang" onclick="toggleLang()">عربي</button>
+    <a href="https://twin.excellnutrients.com" target="_blank" class="btn-nav-cta">Start Assessment →</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">✕</button>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="shop.html" onclick="toggleMenu()">Shop</a>
+  <a href="kits.html" onclick="toggleMenu()">Protocol Kits</a>
+  <a href="education.html" onclick="toggleMenu()">Learn</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="loyalty.html" onclick="toggleMenu()">Rewards</a>
+  <a href="https://twin.excellnutrients.com" target="_blank">Start Assessment →</a>
+</div>
+
+<div class="page-wrap">
+  <div class="kits-hero">
+    <div class="eyebrow">Curated Protocol Kits</div>
+    <h1>Clinically sequenced <em>treatment protocols</em></h1>
+    <p>Not just bundles — complete AM+PM treatment systems designed around your specific health condition. Each kit includes synergistic ingredients at clinical doses, a step-by-step usage guide, and a free expert consultation.</p>
+    <div class="hero-trust">
+      <span class="trust-pill">Save up to 25% vs singles</span>
+      <span class="trust-pill">Free expert consultation</span>
+      <span class="trust-pill">100% Halal Certified</span>
+      <span class="trust-pill">60-day results timeline</span>
+    </div>
+  </div>
+
+  <!-- KIT SELECTOR -->
+  <div class="kit-selector-wrap">
+    <div class="kit-selector">
+      <button class="kit-tab active" onclick="showKit('aging',this)"><span class="kt-icon">⏳</span> Anti-Aging Protocol</button>
+      <button class="kit-tab" onclick="showKit('skin',this)"><span class="kt-icon">✨</span> Radiance & Brightening</button>
+      <button class="kit-tab" onclick="showKit('metabolic',this)"><span class="kt-icon">🩸</span> Blood Sugar Balance</button>
+      <button class="kit-tab" onclick="showKit('mens',this)"><span class="kt-icon">⚡</span> Vitality & Stamina</button>
+      <button class="kit-tab" onclick="showKit('womens',this)"><span class="kt-icon">🌸</span> Hormonal Balance</button>
+      <button class="kit-tab" onclick="showKit('cognitive',this)"><span class="kt-icon">🧠</span> Brain & Focus</button>
+    </div>
+  </div>
+
+  <!-- ══ KIT 1: ANTI-AGING ══ -->
+  <div class="kit-panel active" id="kit-aging">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">⏳ Aging & Longevity Protocol</div>
+        <h2 class="kit-name">Advanced <em>Anti-Aging</em> Protocol</h2>
+        <p class="kit-tagline">A comprehensive cellular rejuvenation stack targeting NAD+ pathways, mitochondrial function, and epigenetic aging markers — the most evidence-backed approach to biological age reversal.</p>
+        <div class="kit-stats">
+          <div class="kit-stat"><div class="kit-stat-val">8</div><div class="kit-stat-label">Key Ingredients</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">90</div><div class="kit-stat-label">Day Protocol</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">500+</div><div class="kit-stat-label">Variables Scored</div></div>
+        </div>
+        <div class="detail-tabs">
+          <button class="dtab active" onclick="showTab(this,'aging-overview')">Overview</button>
+          <button class="dtab" onclick="showTab(this,'aging-science')">The Science</button>
+          <button class="dtab" onclick="showTab(this,'aging-howto')">How to Use</button>
+          <button class="dtab" onclick="showTab(this,'aging-reviews')">Reviews</button>
+        </div>
+        <div class="dtab-panel active" id="aging-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">🔋</span><span class="benefit-text"><strong>Cellular energy restoration</strong> — NMN boosts NAD+ levels, the coenzyme that declines ~50% by age 50, restoring mitochondrial efficiency.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧬</span><span class="benefit-text"><strong>DNA repair activation</strong> — Resveratrol activates sirtuin proteins (SIRT1) that regulate cellular repair and longevity pathways.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">❤️</span><span class="benefit-text"><strong>Cardiovascular protection</strong> — CoQ10 ubiquinol maintains mitochondrial health in cardiac tissue and reduces oxidative damage.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🦴</span><span class="benefit-text"><strong>Bone & immune function</strong> — D3+K2 combination directs calcium to bones (not arteries) and supports immune regulation — critical for GCC populations.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧠</span><span class="benefit-text"><strong>Cognitive preservation</strong> — Omega-3 EPA+DHA maintain neuronal membrane integrity and support anti-inflammatory gene expression.</span></li>
+          </ul>
+          <div class="timeline-section">
+            <span class="timeline-title">Expected results timeline</span>
+            <div class="timeline">
+              <div class="tl-row"><span class="tl-week">Week 1–2</span><span class="tl-text">Improved sleep quality and morning energy. Initial cellular adaptation phase — NAD+ synthesis begins recovering.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 3–4</span><span class="tl-text">Noticeable cognitive clarity, reduced brain fog. Skin begins to appear more luminous as oxidative stress decreases.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 6–8</span><span class="tl-text">Physical stamina and recovery improvement. Blood markers may begin showing improved inflammatory profiles.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 10–12</span><span class="tl-text">Full protocol effect: measurable biological age improvement. Sustained energy, improved cardiovascular markers, visible skin quality change.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtab-panel" id="aging-science">
+          <p class="science-intro">Every ingredient in this protocol is selected based on peer-reviewed clinical evidence. Dosages are calibrated to therapeutic ranges used in published human trials — not the underdosed amounts common in mass-market supplements.</p>
+          <div class="ingredient-science">
+            <div class="ing-card">
+              <div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>NMN (Nicotinamide Mononucleotide)</h4><span class="ing-dose">500mg</span><span class="ing-chevron">▼</span></div>
+              <div class="ing-body"><div class="ing-mechanism">NMN is a direct precursor to NAD+, a coenzyme essential for over 500 enzymatic reactions including energy metabolism, DNA repair, and gene expression regulation. NAD+ levels decline approximately 50% between ages 40–60. Oral NMN supplementation has been shown to raise blood NAD+ levels within 2–4 weeks in human clinical trials.</div><div class="ing-evidence">📚 Evidence: Yoshino et al. (2021, Cell Metabolism) — NMN supplementation improved muscle insulin sensitivity and increased NAD+ metabolism in premenopausal women with prediabetes.</div></div>
+            </div>
+            <div class="ing-card">
+              <div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>Trans-Resveratrol</h4><span class="ing-dose">250mg</span><span class="ing-chevron">▼</span></div>
+              <div class="ing-body"><div class="ing-mechanism">Trans-resveratrol activates SIRT1 and SIRT3 sirtuins — NAD+-dependent deacetylases that regulate cellular stress responses, mitochondrial biogenesis, and longevity pathways. Functions synergistically with NMN; the two compounds have been termed a "longevity combination" in the research literature.</div><div class="ing-evidence">📚 Evidence: Timmers et al. (2011, Cell Metabolism) — Resveratrol supplementation mimicked caloric restriction effects and improved metabolic health in obese men.</div></div>
+            </div>
+            <div class="ing-card">
+              <div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>CoQ10 Ubiquinol</h4><span class="ing-dose">200mg</span><span class="ing-chevron">▼</span></div>
+              <div class="ing-body"><div class="ing-mechanism">Ubiquinol (reduced form of CoQ10) is the primary mitochondrial electron carrier and a potent lipid-soluble antioxidant. Plasma CoQ10 declines with age and is depleted by statin use. At 200mg, the ubiquinol form is absorbed 3–8x more efficiently than ubiquinone, with measurable plasma elevations within 2 weeks.</div><div class="ing-evidence">📚 Evidence: Langsjoen & Langsjoen (2014, Biofactors) — Ubiquinol supplementation at 200mg significantly improved heart failure outcomes vs ubiquinone at equivalent doses.</div></div>
+            </div>
+            <div class="ing-card">
+              <div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>Vitamin D3 + K2 MK-7</h4><span class="ing-dose">5000IU + 100mcg</span><span class="ing-chevron">▼</span></div>
+              <div class="ing-body"><div class="ing-mechanism">Vitamin D3 functions as a steroid hormone regulating over 1000 genes, immune function, calcium absorption, and inflammation. K2 MK-7 activates matrix Gla-protein (MGP) which inhibits arterial calcification, directing calcium to bone instead of blood vessels. These compounds work synergistically — D3 increases calcium absorption, K2 determines where it is deposited. Vitamin D deficiency affects an estimated 80%+ of GCC populations due to limited sun exposure.</div><div class="ing-evidence">📚 Evidence: Vermeer et al. (2009, Thrombosis and Haemostasis) — K2 MK-7 supplementation significantly reduced arterial stiffness over 3 years in postmenopausal women.</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtab-panel" id="aging-howto">
+          <div class="protocol-visual">
+            <span class="pv-title">Your daily protocol</span>
+            <div class="pv-stacks">
+              <div class="pv-stack">
+                <span class="pv-stack-label">☀️ Morning (AM)</span>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">NMN 500mg</span><span class="pv-item-dose">1 capsule</span></div>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Resveratrol 250mg</span><span class="pv-item-dose">1 capsule</span></div>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">D3+K2 5000IU</span><span class="pv-item-dose">1 softgel</span></div>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">OmegaMax 1000mg</span><span class="pv-item-dose">2 softgels</span></div>
+              </div>
+              <div class="pv-stack">
+                <span class="pv-stack-label">🌙 Evening (PM)</span>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">CoQ10 Ubiquinol 200mg</span><span class="pv-item-dose">1 softgel</span></div>
+                <div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Magnesium Glycinate</span><span class="pv-item-dose">400mg</span></div>
+              </div>
+            </div>
+          </div>
+          <ul class="usage-steps">
+            <li class="usage-step"><span class="usage-num">1</span><span class="usage-text"><strong>Take AM stack with breakfast</strong> — fat-soluble vitamins (D3, Omega-3, CoQ10) absorb significantly better with a meal containing healthy fats.</span></li>
+            <li class="usage-step"><span class="usage-num">2</span><span class="usage-text"><strong>NMN best taken on an empty stomach or with a light meal</strong> — avoid taking with high-carbohydrate meals which may affect absorption.</span></li>
+            <li class="usage-step"><span class="usage-num">3</span><span class="usage-text"><strong>Take PM stack with dinner or 1 hour before sleep</strong> — Magnesium glycinate supports deep sleep and muscle recovery overnight.</span></li>
+            <li class="usage-step"><span class="usage-num">4</span><span class="usage-text"><strong>Complete the 90-day cycle</strong> — longevity supplements require consistent use for measurable biological change. Do not skip weeks.</span></li>
+            <li class="usage-step"><span class="usage-num">5</span><span class="usage-text"><strong>Optional: request lab testing at week 8</strong> — our clinical team can help you order NAD+, inflammatory markers, and lipid panels to track objective progress.</span></li>
+          </ul>
+          <div class="important-note"><strong>⚠️ Important:</strong> If you are taking warfarin, statins, or any blood-thinning medication, consult your physician before starting the Vitamin K2 or Omega-3 components. Book your free consultation to discuss medication interactions.</div>
+        </div>
+        <div class="dtab-panel" id="aging-reviews">
+          <div class="reviews-summary">
+            <div class="review-avg"><div class="review-num">4.9</div><div class="review-stars">★★★★★</div><div class="review-count">68 reviews</div></div>
+            <div class="review-bars">
+              <div class="rbar-row"><span class="rbar-label">5 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:88%"></div></div><span class="rbar-count">60</span></div>
+              <div class="rbar-row"><span class="rbar-label">4 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:10%"></div></div><span class="rbar-count">6</span></div>
+              <div class="rbar-row"><span class="rbar-label">3 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:3%"></div></div><span class="rbar-count">2</span></div>
+              <div class="rbar-row"><span class="rbar-label">2 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-count">0</span></div>
+              <div class="rbar-row"><span class="rbar-label">1 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-count">0</span></div>
+            </div>
+          </div>
+          <div class="review-list">
+            <div class="review-card"><div class="review-header"><div><div class="reviewer-name">Ahmed Al-Rashid <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Dubai, UAE · 3 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">Started this protocol after my Digital Twin assessment flagged low NAD+ indicators. After 90 days, my energy levels are significantly improved and I feel sharper at work. The free consultation with the Excell team helped me understand the science behind each supplement. Genuinely impressed.</div><div class="review-tag">⏳ 90-day review</div></div>
+            <div class="review-card"><div class="review-header"><div><div class="reviewer-name">Dr. Fatima Hassan <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Riyadh, KSA · 5 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">As a physician myself, I was sceptical about supplement protocols. But the clinical rationale behind each ingredient selection is solid — they cite the actual trials, dosages match what's studied. My inflammatory markers improved noticeably on follow-up bloods at week 10.</div><div class="review-tag">👩‍⚕️ Healthcare professional</div></div>
+            <div class="review-card"><div class="review-header"><div><div class="reviewer-name">James Okonkwo <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Kigali, Rwanda · 2 months ago</div></div><div class="review-rating">★★★★☆</div></div><div class="review-text">Good experience overall. Shipping to East Africa was faster than expected. The quality of the supplements is clearly superior to what's available locally. Docking one star only because I wish there were more frequent check-ins from the team.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PURCHASE CARD -->
+      <div class="purchase-card">
+        <div class="pc-kit-name">Advanced Anti-Aging Protocol</div>
+        <div class="pc-tagline">Complete 90-day cellular rejuvenation system</div>
+        <div class="pc-price-row"><span class="pc-price">AED 290</span><span class="pc-was">AED 385</span><span class="pc-save">Save 25%</span></div>
+        <div class="pc-period">Per month supply · Free UAE shipping</div>
+        <div class="pc-includes">
+          <span class="pc-includes-title">Kit includes</span>
+          <div class="pc-item">NMN 500mg Longevity (30 capsules)</div>
+          <div class="pc-item">Resveratrol Trans 250mg (30 capsules)</div>
+          <div class="pc-item">CoQ10 Ubiquinol 200mg (30 softgels)</div>
+          <div class="pc-item">D3+K2 5000IU (30 softgels)</div>
+          <div class="pc-item">OmegaMax 1000mg (60 softgels)</div>
+          <div class="pc-item">Magnesium Glycinate 400mg (60 capsules)</div>
+          <div class="pc-item">Protocol usage guide (PDF)</div>
+        </div>
+        <div class="shopify-slot">🛒 Shopify Buy Button<br>Paste embed code here</div>
+        <a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Advanced+Anti-Aging+Protocol+Kit+(AED+290%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 290</a>
+        <div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included with every kit purchase — video call or WhatsApp</div>
+        <div class="pc-guarantees">
+          <div class="pc-guarantee">100% Halal Certified ingredients</div>
+          <div class="pc-guarantee">GMP manufactured, third-party tested</div>
+          <div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div>
+          <div class="pc-guarantee">Personalised by your Digital Twin protocol</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED KITS -->
+    <div class="related-section reveal">
+      <div class="section-eyebrow">Often combined with</div>
+      <div class="section-title">Related <em>protocol kits</em></div>
+      <div class="related-grid">
+        <a href="#" onclick="showKit('skin',document.querySelector('[onclick*=\"skin\"]'));return false;" class="related-card"><span class="rc-icon">✨</span><div class="rc-name">Radiance & Brightening</div><div class="rc-desc">Skin health complement to the aging protocol — glutathione, collagen, vitamin C.</div><div class="rc-price">AED 245 / month</div></a>
+        <a href="#" onclick="showKit('cognitive',document.querySelector('[onclick*=\"cognitive\"]'));return false;" class="related-card"><span class="rc-icon">🧠</span><div class="rc-name">Brain & Focus Protocol</div><div class="rc-desc">Cognitive enhancement stack — lion's mane, bacopa, phosphatidylserine.</div><div class="rc-price">AED 210 / month</div></a>
+        <a href="#" onclick="showKit('metabolic',document.querySelector('[onclick*=\"metabolic\"]'));return false;" class="related-card"><span class="rc-icon">🩸</span><div class="rc-name">Blood Sugar Balance</div><div class="rc-desc">Metabolic health foundation — berberine, ALA, chromium, magnesium.</div><div class="rc-price">AED 220 / month</div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KIT 2: SKIN ══ -->
+  <div class="kit-panel" id="kit-skin">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">✨ Skin & Brightening Protocol</div>
+        <h2 class="kit-name">Radiance & <em>Brightening</em> Protocol</h2>
+        <p class="kit-tagline">A comprehensive inside-out skin protocol combining oral glutathione, liposomal vitamin C, marine collagen peptides, and targeted topical support — clinically formulated for melanin-rich skin.</p>
+        <div class="kit-stats">
+          <div class="kit-stat"><div class="kit-stat-val">7</div><div class="kit-stat-label">Key Ingredients</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">60</div><div class="kit-stat-label">Day Protocol</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">4–8</div><div class="kit-stat-label">Weeks to Results</div></div>
+        </div>
+        <div class="detail-tabs">
+          <button class="dtab active" onclick="showTab(this,'skin-overview')">Overview</button>
+          <button class="dtab" onclick="showTab(this,'skin-science')">The Science</button>
+          <button class="dtab" onclick="showTab(this,'skin-howto')">How to Use</button>
+          <button class="dtab" onclick="showTab(this,'skin-reviews')">Reviews</button>
+        </div>
+        <div class="dtab-panel active" id="skin-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">✨</span><span class="benefit-text"><strong>Melanin inhibition from within</strong> — Glutathione shifts melanin synthesis from eumelanin (dark) to phaeomelanin (lighter pigment) through tyrosinase enzyme inhibition.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🔬</span><span class="benefit-text"><strong>Collagen synthesis stimulation</strong> — Vitamin C is the essential cofactor for collagen hydroxylation. Marine collagen peptides provide the amino acid building blocks (glycine, proline, hydroxyproline).</span></li>
+            <li class="benefit-item"><span class="benefit-icon">💧</span><span class="benefit-text"><strong>Deep skin hydration</strong> — Hyaluronic acid and collagen peptides restore extracellular matrix hydration, visibly plumping fine lines and improving skin texture.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🛡️</span><span class="benefit-text"><strong>Antioxidant shield</strong> — Alpha lipoic acid regenerates both glutathione and vitamin C within the cell, extending their antioxidant activity and protecting against UV-induced damage.</span></li>
+          </ul>
+          <div class="timeline-section">
+            <span class="timeline-title">Expected results timeline</span>
+            <div class="timeline">
+              <div class="tl-row"><span class="tl-week">Week 1–2</span><span class="tl-text">Skin begins to feel more hydrated and supple as collagen peptides support extracellular matrix. Antioxidant levels increase systemically.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 3–4</span><span class="tl-text">Initial brightening visible — particularly in areas of hyperpigmentation. Skin tone becomes more even. Texture improvements begin.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 6–8</span><span class="tl-text">Significant brightening effect. Reduction in dark spots and uneven pigmentation. Skin luminosity measurably improved. Fine lines less prominent.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtab-panel" id="skin-science">
+          <p class="science-intro">Skin brightening from within is significantly more effective and sustainable than topical-only approaches. The oral route allows systemic antioxidant loading that topical products cannot achieve.</p>
+          <div class="ingredient-science">
+            <div class="ing-card"><div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>L-Glutathione (Reduced)</h4><span class="ing-dose">500mg</span><span class="ing-chevron">▼</span></div><div class="ing-body"><div class="ing-mechanism">Glutathione is the body's master antioxidant and primary melanin regulator. At the pigmentation level, it inhibits tyrosinase — the rate-limiting enzyme in melanin synthesis — while simultaneously shifting production from darker eumelanin to lighter phaeomelanin. Critically, the reduced (L-) form is active and maintains its integrity in capsule form when protected from heat and light.</div><div class="ing-evidence">📚 Evidence: Sonthalia et al. (2016, Journal of Cosmetic Dermatology) — Oral glutathione 500mg for 4 weeks produced significant skin brightening with no adverse effects in a randomised controlled trial.</div></div></div>
+            <div class="ing-card"><div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>Liposomal Vitamin C</h4><span class="ing-dose">1000mg</span><span class="ing-chevron">▼</span></div><div class="ing-body"><div class="ing-mechanism">Vitamin C (ascorbic acid) inhibits melanin synthesis independently of glutathione by reducing dopaquinone back to DOPA, interrupting the melanin cascade. More importantly, it is the essential cofactor for collagen hydroxylation — without adequate vitamin C, pro-collagen chains cannot be properly cross-linked. The liposomal form achieves 3–4x higher plasma levels than standard ascorbic acid tablets.</div><div class="ing-evidence">📚 Evidence: Gęgotek et al. (2021) — Vitamin C supplementation significantly increased skin collagen density and reduced UV-induced oxidative damage markers.</div></div></div>
+          </div>
+        </div>
+        <div class="dtab-panel" id="skin-howto">
+          <div class="protocol-visual">
+            <span class="pv-title">Your daily protocol</span>
+            <div class="pv-stacks">
+              <div class="pv-stack"><span class="pv-stack-label">☀️ Morning (AM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Glutathione 500mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Liposomal Vitamin C</span><span class="pv-item-dose">1000mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Marine Collagen Peptides</span><span class="pv-item-dose">5g powder</span></div></div>
+              <div class="pv-stack"><span class="pv-stack-label">🌙 Evening (PM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Alpha Lipoic Acid</span><span class="pv-item-dose">300mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Biotin 10,000mcg</span><span class="pv-item-dose">1 capsule</span></div></div>
+            </div>
+          </div>
+          <ul class="usage-steps">
+            <li class="usage-step"><span class="usage-num">1</span><span class="usage-text"><strong>Take glutathione on an empty stomach</strong> — at least 30 minutes before breakfast or 2 hours after a meal for optimal absorption.</span></li>
+            <li class="usage-step"><span class="usage-num">2</span><span class="usage-text"><strong>Mix collagen powder into warm (not hot) liquid</strong> — coffee, tea, or water. Heat above 70°C degrades peptide structure.</span></li>
+            <li class="usage-step"><span class="usage-num">3</span><span class="usage-text"><strong>Apply SPF 30+ daily</strong> — glutathione brightening effects are negated by UV exposure without sun protection. Non-negotiable for the GCC climate.</span></li>
+            <li class="usage-step"><span class="usage-num">4</span><span class="usage-text"><strong>Complete minimum 60 days</strong> — melanin regulation requires a full skin turnover cycle (approximately 28–40 days) to see the full effect.</span></li>
+          </ul>
+          <div class="important-note"><strong>Note for GCC users:</strong> The combination of indoor air-conditioning (which dehydrates skin) and intense UV exposure when outdoors makes this protocol particularly well-suited for UAE and KSA climates. The hydration-boosting collagen component is especially beneficial.</div>
+        </div>
+        <div class="dtab-panel" id="skin-reviews">
+          <div class="reviews-summary">
+            <div class="review-avg"><div class="review-num">4.8</div><div class="review-stars">★★★★★</div><div class="review-count">94 reviews</div></div>
+            <div class="review-bars">
+              <div class="rbar-row"><span class="rbar-label">5 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:82%"></div></div><span class="rbar-count">77</span></div>
+              <div class="rbar-row"><span class="rbar-label">4 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:14%"></div></div><span class="rbar-count">13</span></div>
+              <div class="rbar-row"><span class="rbar-label">3 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:4%"></div></div><span class="rbar-count">4</span></div>
+            </div>
+          </div>
+          <div class="review-list">
+            <div class="review-card"><div class="review-header"><div><div class="reviewer-name">Nadia Al-Farsi <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Abu Dhabi, UAE · 2 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">I've tried so many brightening supplements and this is the first one where I genuinely see a difference. By week 4 my skin was visibly more even. My husband noticed before I told him I'd started anything. The glutathione + vitamin C combination is the key I think. Will continue indefinitely.</div><div class="review-tag">✨ 60-day review</div></div>
+            <div class="review-card"><div class="review-header"><div><div class="reviewer-name">Amara Diallo <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Nairobi, Kenya · 4 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">As someone with deep melanin-rich skin, I was worried brightening supplements would make my skin look ashy or uneven. The Excell team walked me through the science — it evens tone rather than bleaching. After 8 weeks my hyperpigmentation from old acne scars is significantly reduced.</div><div class="review-tag">🌍 East Africa</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="purchase-card">
+        <div class="pc-kit-name">Radiance & Brightening Protocol</div>
+        <div class="pc-tagline">Inside-out skin brightening system — 60 days</div>
+        <div class="pc-price-row"><span class="pc-price">AED 245</span><span class="pc-was">AED 320</span><span class="pc-save">Save 23%</span></div>
+        <div class="pc-period">Per month supply · Free UAE shipping</div>
+        <div class="pc-includes">
+          <span class="pc-includes-title">Kit includes</span>
+          <div class="pc-item">Glutathione 500mg (30 capsules)</div>
+          <div class="pc-item">Liposomal Vitamin C 1000mg (30 sachets)</div>
+          <div class="pc-item">Marine Collagen Peptides (300g powder)</div>
+          <div class="pc-item">Alpha Lipoic Acid 300mg (30 capsules)</div>
+          <div class="pc-item">Biotin 10,000mcg (30 capsules)</div>
+          <div class="pc-item">Skin protocol guide (PDF)</div>
+        </div>
+        <div class="shopify-slot">🛒 Shopify Buy Button<br>Paste embed code here</div>
+        <a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Radiance+%26+Brightening+Protocol+(AED+245%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 245</a>
+        <div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included with every kit purchase</div>
+        <div class="pc-guarantees">
+          <div class="pc-guarantee">100% Halal Certified</div>
+          <div class="pc-guarantee">GMP manufactured, third-party tested</div>
+          <div class="pc-guarantee">Formulated for melanin-rich skin</div>
+          <div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div>
+        </div>
+      </div>
+    </div>
+    <div class="related-section reveal">
+      <div class="section-eyebrow">Often combined with</div>
+      <div class="section-title">Related <em>protocol kits</em></div>
+      <div class="related-grid">
+        <a href="#" onclick="showKit('aging',null);return false;" class="related-card"><span class="rc-icon">⏳</span><div class="rc-name">Advanced Anti-Aging</div><div class="rc-desc">Cellular longevity foundation that supports and enhances skin brightening results.</div><div class="rc-price">AED 290 / month</div></a>
+        <a href="#" onclick="showKit('cognitive',null);return false;" class="related-card"><span class="rc-icon">🧠</span><div class="rc-name">Brain & Focus Protocol</div><div class="rc-desc">Stress reduction through cognitive support reduces cortisol-driven skin damage.</div><div class="rc-price">AED 210 / month</div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KIT 3: METABOLIC ══ -->
+  <div class="kit-panel" id="kit-metabolic">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">🩸 Metabolic Health Protocol</div>
+        <h2 class="kit-name">Blood Sugar <em>Balance</em> Protocol</h2>
+        <p class="kit-tagline">Precision metabolic support for blood glucose management, insulin sensitivity, and healthy weight maintenance. Particularly relevant for GCC populations where T2D prevalence reaches 19% — among the highest globally.</p>
+        <div class="kit-stats">
+          <div class="kit-stat"><div class="kit-stat-val">6</div><div class="kit-stat-label">Key Ingredients</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">90</div><div class="kit-stat-label">Day Protocol</div></div>
+          <div class="kit-stat"><div class="kit-stat-val">GCC</div><div class="kit-stat-label">Priority Concern</div></div>
+        </div>
+        <div class="detail-tabs">
+          <button class="dtab active" onclick="showTab(this,'metabolic-overview')">Overview</button>
+          <button class="dtab" onclick="showTab(this,'metabolic-science')">The Science</button>
+          <button class="dtab" onclick="showTab(this,'metabolic-howto')">How to Use</button>
+          <button class="dtab" onclick="showTab(this,'metabolic-reviews')">Reviews</button>
+        </div>
+        <div class="dtab-panel active" id="metabolic-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">🩸</span><span class="benefit-text"><strong>Blood glucose regulation</strong> — Berberine activates AMPK (the "metabolic master switch"), improving insulin signalling and glucose uptake comparable to 500mg metformin in clinical trials.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">⚖️</span><span class="benefit-text"><strong>Insulin sensitivity improvement</strong> — Alpha lipoic acid reduces insulin resistance at the cellular level, improving glucose transporter (GLUT4) translocation.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧪</span><span class="benefit-text"><strong>HbA1c reduction support</strong> — Chromium picolinate enhances insulin receptor binding and reduces post-meal glucose spikes — measurable in HbA1c within 90 days.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">💪</span><span class="benefit-text"><strong>Muscle glucose uptake</strong> — Magnesium deficiency (common in T2D) impairs insulin receptor function. Supplementation restores normal glucose metabolism in deficient individuals.</span></li>
+          </ul>
+          <div class="timeline-section">
+            <span class="timeline-title">Expected results timeline</span>
+            <div class="timeline">
+              <div class="tl-row"><span class="tl-week">Week 1–2</span><span class="tl-text">Reduced post-meal blood sugar spikes. Many users notice less afternoon energy crashes within the first week of berberine use.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 4–6</span><span class="tl-text">Fasting glucose improvements becoming measurable. Reduction in sugar cravings. Improved sustained energy throughout the day.</span></div>
+              <div class="tl-row"><span class="tl-week">Week 10–12</span><span class="tl-text">HbA1c may show measurable reduction on lab testing. Weight management support becomes more apparent as insulin sensitivity improves.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dtab-panel" id="metabolic-science"><p class="science-intro">Metabolic dysfunction is the root cause of multiple GCC chronic conditions — diabetes, cardiovascular disease, and obesity. This protocol addresses the underlying insulin resistance mechanism rather than masking symptoms.</p><div class="ingredient-science"><div class="ing-card"><div class="ing-card-header" onclick="toggleIng(this.parentElement)"><h4>Berberine HCl</h4><span class="ing-dose">500mg × 3</span><span class="ing-chevron">▼</span></div><div class="ing-body"><div class="ing-mechanism">Berberine activates AMP-activated protein kinase (AMPK), often called the metabolic master switch. This activation mimics the effects of caloric restriction and exercise at the cellular level. Multiple meta-analyses have confirmed berberine reduces fasting glucose, post-meal glucose, and HbA1c with an effect size comparable to first-line diabetic medications — without the side effects profile.</div><div class="ing-evidence">📚 Evidence: Yin et al. (2008, Metabolism) — Berberine 500mg × 3 daily reduced HbA1c by 2.0% and fasting glucose by 25.9% in T2D patients over 3 months.</div></div></div></div></div>
+        <div class="dtab-panel" id="metabolic-howto">
+          <div class="protocol-visual"><span class="pv-title">Your daily protocol</span><div class="pv-stacks"><div class="pv-stack"><span class="pv-stack-label">☀️ Morning (AM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Berberine HCl 500mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Alpha Lipoic Acid 300mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Chromium 200mcg</span><span class="pv-item-dose">1 capsule</span></div></div><div class="pv-stack"><span class="pv-stack-label">🌙 Evening (PM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Berberine HCl 500mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Magnesium Glycinate</span><span class="pv-item-dose">400mg</span></div></div></div></div>
+          <ul class="usage-steps"><li class="usage-step"><span class="usage-num">1</span><span class="usage-text"><strong>Take berberine with meals</strong> — its peak blood glucose-lowering effect coincides with post-meal glucose spikes. Never take on an empty stomach.</span></li><li class="usage-step"><span class="usage-num">2</span><span class="usage-text"><strong>Start with 1 capsule daily for the first week</strong> — berberine can cause mild GI discomfort initially. Build to full dose (3 capsules) over 2 weeks to allow gut microbiome adaptation.</span></li><li class="usage-step"><span class="usage-num">3</span><span class="usage-text"><strong>Monitor your blood glucose if diabetic</strong> — berberine has genuine glucose-lowering effects. If you are on diabetic medication, your physician may need to adjust your prescription. This requires a consultation.</span></li></ul>
+          <div class="important-note"><strong>⚠️ Important:</strong> If you are currently on metformin, insulin, or other glucose-lowering medications, booking the free consultation before starting this protocol is essential to prevent hypoglycaemia.</div>
+        </div>
+        <div class="dtab-panel" id="metabolic-reviews"><div class="reviews-summary"><div class="review-avg"><div class="review-num">4.8</div><div class="review-stars">★★★★★</div><div class="review-count">56 reviews</div></div><div class="review-bars"><div class="rbar-row"><span class="rbar-label">5 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:84%"></div></div><span class="rbar-count">47</span></div><div class="rbar-row"><span class="rbar-label">4 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:12%"></div></div><span class="rbar-count">7</span></div><div class="rbar-row"><span class="rbar-label">3 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:4%"></div></div><span class="rbar-count">2</span></div></div></div><div class="review-list"><div class="review-card"><div class="review-header"><div><div class="reviewer-name">Khalid Al-Mutairi <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Kuwait City · 4 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">My fasting glucose went from 7.2 to 6.1 mmol/L over 10 weeks. I've also lost 4kg without any other major changes. The free consultation was invaluable — they helped me time the berberine with my meals correctly. My GP was impressed with the progress on my bloods.</div><div class="review-tag">🩸 Verified blood sugar improvement</div></div></div></div>
+      </div>
+      <div class="purchase-card">
+        <div class="pc-kit-name">Blood Sugar Balance Protocol</div>
+        <div class="pc-tagline">90-day metabolic health system</div>
+        <div class="pc-price-row"><span class="pc-price">AED 220</span><span class="pc-was">AED 288</span><span class="pc-save">Save 24%</span></div>
+        <div class="pc-period">Per month supply · Free UAE shipping</div>
+        <div class="pc-includes"><span class="pc-includes-title">Kit includes</span><div class="pc-item">Berberine HCl 500mg (90 capsules — 3/day)</div><div class="pc-item">Alpha Lipoic Acid R-Form 300mg (30)</div><div class="pc-item">Chromium Picolinate 200mcg (30)</div><div class="pc-item">Magnesium Glycinate 400mg (60)</div><div class="pc-item">Ceylon Cinnamon 500mg (30)</div><div class="pc-item">Metabolic protocol guide (PDF)</div></div>
+        <div class="shopify-slot">🛒 Shopify Buy Button<br>Paste embed code here</div>
+        <a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Blood+Sugar+Balance+Protocol+(AED+220%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 220</a>
+        <div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included — medication interaction review available</div>
+        <div class="pc-guarantees"><div class="pc-guarantee">100% Halal Certified</div><div class="pc-guarantee">GMP manufactured, third-party tested</div><div class="pc-guarantee">GCC-formulated for T2D prevalence</div><div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div></div>
+      </div>
+    </div>
+    <div class="related-section reveal"><div class="section-eyebrow">Often combined with</div><div class="section-title">Related <em>protocol kits</em></div><div class="related-grid"><a href="#" onclick="showKit('aging',null);return false;" class="related-card"><span class="rc-icon">⏳</span><div class="rc-name">Advanced Anti-Aging</div><div class="rc-desc">Metabolic dysfunction accelerates aging. NMN supports mitochondrial energy metabolism.</div><div class="rc-price">AED 290 / month</div></a><a href="#" onclick="showKit('cardio',null);return false;" class="related-card"><span class="rc-icon">❤️</span><div class="rc-name">Cardiovascular Protocol</div><div class="rc-desc">Blood sugar and cardiovascular health are closely linked — frequently co-managed.</div><div class="rc-price">AED 235 / month</div></a></div></div>
+  </div>
+
+  <!-- ══ KITS 4,5,6: MENS, WOMENS, COGNITIVE — compact versions ══ -->
+  <div class="kit-panel" id="kit-mens">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">⚡ Men's Health Protocol</div>
+        <h2 class="kit-name">Vitality & <em>Stamina</em> Protocol</h2>
+        <p class="kit-tagline">Evidence-based nutraceutical stack for male vitality, testosterone support, fertility, and physical performance. Clinically dosed with ingredients proven in human trials.</p>
+        <div class="kit-stats"><div class="kit-stat"><div class="kit-stat-val">7</div><div class="kit-stat-label">Key Ingredients</div></div><div class="kit-stat"><div class="kit-stat-val">90</div><div class="kit-stat-label">Day Protocol</div></div><div class="kit-stat"><div class="kit-stat-val">4–6</div><div class="kit-stat-label">Weeks to Results</div></div></div>
+        <div class="detail-tabs"><button class="dtab active" onclick="showTab(this,'mens-overview')">Overview</button><button class="dtab" onclick="showTab(this,'mens-howto')">How to Use</button><button class="dtab" onclick="showTab(this,'mens-reviews')">Reviews</button></div>
+        <div class="dtab-panel active" id="mens-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">⚡</span><span class="benefit-text"><strong>Testosterone support</strong> — KSM-66 Ashwagandha has demonstrated statistically significant testosterone increases in double-blind trials. Zinc and D3 are essential cofactors for testosterone synthesis.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">💪</span><span class="benefit-text"><strong>Physical performance & recovery</strong> — Ashwagandha increases VO2 max and reduces exercise-induced cortisol. CoQ10 supports mitochondrial energy in muscle cells.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧬</span><span class="benefit-text"><strong>Fertility support</strong> — L-Carnitine, CoQ10, and Zinc collectively improve sperm motility, morphology, and count — the three key fertility parameters.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧠</span><span class="benefit-text"><strong>Stress & cortisol reduction</strong> — Chronic stress suppresses testosterone via HPA axis activation. Ashwagandha directly reduces cortisol, creating a hormonal environment more conducive to testosterone production.</span></li>
+          </ul>
+          <div class="timeline-section"><span class="timeline-title">Expected results timeline</span><div class="timeline"><div class="tl-row"><span class="tl-week">Week 1–2</span><span class="tl-text">Improved sleep quality and stress resilience. Many users report reduced anxiety and better focus within 2 weeks of KSM-66.</span></div><div class="tl-row"><span class="tl-week">Week 4–6</span><span class="tl-text">Increased physical endurance and faster recovery. Libido improvements begin in majority of users.</span></div><div class="tl-row"><span class="tl-week">Week 8–12</span><span class="tl-text">Testosterone levels measurably improved on lab testing. Full physical performance gains established. Fertility markers improved.</span></div></div></div>
+        </div>
+        <div class="dtab-panel" id="mens-howto">
+          <div class="protocol-visual"><span class="pv-title">Your daily protocol</span><div class="pv-stacks"><div class="pv-stack"><span class="pv-stack-label">☀️ Morning (AM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">KSM-66 Ashwagandha</span><span class="pv-item-dose">600mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">D3+K2 5000IU</span><span class="pv-item-dose">1 softgel</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">OmegaMax 1000mg</span><span class="pv-item-dose">2 softgels</span></div></div><div class="pv-stack"><span class="pv-stack-label">🌙 Evening (PM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">CoQ10 Ubiquinol</span><span class="pv-item-dose">200mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Zinc Bisglycinate</span><span class="pv-item-dose">25mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">L-Carnitine</span><span class="pv-item-dose">1000mg</span></div></div></div></div>
+          <ul class="usage-steps"><li class="usage-step"><span class="usage-num">1</span><span class="usage-text"><strong>Take ashwagandha consistently</strong> — the adaptogenic effects build over 4–8 weeks of consistent use. Do not skip days in the first 6 weeks.</span></li><li class="usage-step"><span class="usage-num">2</span><span class="usage-text"><strong>Take zinc at least 2 hours apart from dairy and high-fibre foods</strong> — both interfere with zinc absorption significantly.</span></li><li class="usage-step"><span class="usage-num">3</span><span class="usage-text"><strong>For fertility goals</strong> — allow 90 days minimum before assessing sperm parameters. One complete spermatogenesis cycle takes approximately 74 days.</span></li></ul>
+        </div>
+        <div class="dtab-panel" id="mens-reviews"><div class="review-list"><div class="review-card"><div class="review-header"><div><div class="reviewer-name">Omar Benali <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Dubai, UAE · 3 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">My testosterone went from 12.4 to 18.2 nmol/L over 90 days. Gym performance is significantly improved, and recovery is much faster. The clinical consultation before starting was key — they helped me sequence the supplements correctly.</div><div class="review-tag">⚡ Verified testosterone improvement</div></div></div></div>
+      </div>
+      <div class="purchase-card"><div class="pc-kit-name">Vitality & Stamina Protocol</div><div class="pc-tagline">90-day men's health system</div><div class="pc-price-row"><span class="pc-price">AED 255</span><span class="pc-was">AED 340</span><span class="pc-save">Save 25%</span></div><div class="pc-period">Per month supply · Free UAE shipping</div><div class="pc-includes"><span class="pc-includes-title">Kit includes</span><div class="pc-item">KSM-66 Ashwagandha 600mg (30)</div><div class="pc-item">CoQ10 Ubiquinol 200mg (30)</div><div class="pc-item">D3+K2 5000IU (30)</div><div class="pc-item">OmegaMax 1000mg (60)</div><div class="pc-item">Zinc Bisglycinate 25mg (30)</div><div class="pc-item">L-Carnitine 1000mg (30)</div></div><div class="shopify-slot">🛒 Shopify Buy Button</div><a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Vitality+%26+Stamina+Protocol+(AED+255%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 255</a><div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included</div><div class="pc-guarantees"><div class="pc-guarantee">100% Halal Certified</div><div class="pc-guarantee">GMP manufactured, third-party tested</div><div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div></div></div>
+    </div>
+  </div>
+
+  <div class="kit-panel" id="kit-womens">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">🌸 Women's Wellness Protocol</div>
+        <h2 class="kit-name">Hormonal <em>Balance</em> Protocol</h2>
+        <p class="kit-tagline">Targeted support for hormonal equilibrium, PCOS management, menopause transition, and female reproductive wellness. Clinically formulated to address the hormonal complexity unique to women's health.</p>
+        <div class="kit-stats"><div class="kit-stat"><div class="kit-stat-val">7</div><div class="kit-stat-label">Key Ingredients</div></div><div class="kit-stat"><div class="kit-stat-val">90</div><div class="kit-stat-label">Day Protocol</div></div><div class="kit-stat"><div class="kit-stat-val">3–6</div><div class="kit-stat-label">Weeks to Results</div></div></div>
+        <div class="detail-tabs"><button class="dtab active" onclick="showTab(this,'womens-overview')">Overview</button><button class="dtab" onclick="showTab(this,'womens-howto')">How to Use</button><button class="dtab" onclick="showTab(this,'womens-reviews')">Reviews</button></div>
+        <div class="dtab-panel active" id="womens-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">🌸</span><span class="benefit-text"><strong>Hormonal regulation</strong> — Vitex agnus-castus (chasteberry) modulates dopamine receptors in the pituitary, normalising LH/FSH ratios and supporting progesterone production.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧬</span><span class="benefit-text"><strong>PCOS & ovarian support</strong> — Myo-inositol + D-chiro-inositol at the 40:1 ratio is clinically the most effective nutritional intervention for PCOS — improving insulin sensitivity, ovulation frequency, and androgen levels.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">💊</span><span class="benefit-text"><strong>Fertility foundation</strong> — Methylfolate (active B9), CoQ10, and N-Acetyl Cysteine support egg quality, DNA integrity, and mitochondrial energy in oocytes.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🌡️</span><span class="benefit-text"><strong>Menopause symptom management</strong> — Black cohosh has strong evidence for hot flush reduction. Magnesium supports mood stability, sleep, and bone density during the transition.</span></li>
+          </ul>
+        </div>
+        <div class="dtab-panel" id="womens-howto">
+          <div class="protocol-visual"><span class="pv-title">Your daily protocol</span><div class="pv-stacks"><div class="pv-stack"><span class="pv-stack-label">☀️ Morning (AM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Myo-Inositol 2000mg</span><span class="pv-item-dose">1 sachet</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Methylfolate 400mcg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">CoQ10 Ubiquinol 200mg</span><span class="pv-item-dose">1 softgel</span></div></div><div class="pv-stack"><span class="pv-stack-label">🌙 Evening (PM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Vitex 400mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Magnesium Glycinate</span><span class="pv-item-dose">400mg</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Vitamin B6 (P5P)</span><span class="pv-item-dose">50mg</span></div></div></div></div>
+          <div class="important-note"><strong>Note:</strong> Vitex should not be taken during pregnancy or alongside hormonal contraceptives. If taking any hormonal medications, book your free consultation before starting this protocol.</div>
+        </div>
+        <div class="dtab-panel" id="womens-reviews"><div class="review-list"><div class="review-card"><div class="review-header"><div><div class="reviewer-name">Sarah Al-Ahmad <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Riyadh, KSA · 5 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">After 3 years of irregular cycles due to PCOS, I'm on month 4 of this protocol with 3 consecutive regular cycles. The myo-inositol combination is the real hero here. My androgenic symptoms (facial hair, acne) have also significantly reduced. This has been life-changing.</div><div class="review-tag">🌸 PCOS management</div></div></div></div>
+      </div>
+      <div class="purchase-card"><div class="pc-kit-name">Hormonal Balance Protocol</div><div class="pc-tagline">90-day women's wellness system</div><div class="pc-price-row"><span class="pc-price">AED 235</span><span class="pc-was">AED 310</span><span class="pc-save">Save 24%</span></div><div class="pc-period">Per month supply · Free UAE shipping</div><div class="pc-includes"><span class="pc-includes-title">Kit includes</span><div class="pc-item">Myo-Inositol + D-Chiro-Inositol (30)</div><div class="pc-item">Vitex Agnus-Castus 400mg (30)</div><div class="pc-item">CoQ10 Ubiquinol 200mg (30)</div><div class="pc-item">Methylfolate 400mcg (30)</div><div class="pc-item">Magnesium Glycinate 400mg (60)</div><div class="pc-item">Vitamin B6 P5P 50mg (30)</div></div><div class="shopify-slot">🛒 Shopify Buy Button</div><a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Hormonal+Balance+Protocol+(AED+235%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 235</a><div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included</div><div class="pc-guarantees"><div class="pc-guarantee">100% Halal Certified</div><div class="pc-guarantee">GMP manufactured, third-party tested</div><div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div></div></div>
+    </div>
+  </div>
+
+  <div class="kit-panel" id="kit-cognitive">
+    <div class="kit-layout">
+      <div class="kit-main">
+        <div class="kit-kit-badge">🧠 Brain & Cognitive Protocol</div>
+        <h2 class="kit-name">Brain & <em>Focus</em> Protocol</h2>
+        <p class="kit-tagline">A precision nootropic stack for memory, sustained focus, and neuroprotection — clinically dosed for measurable cognitive outcomes. Designed for GCC's high-performance professional population.</p>
+        <div class="kit-stats"><div class="kit-stat"><div class="kit-stat-val">6</div><div class="kit-stat-label">Key Ingredients</div></div><div class="kit-stat"><div class="kit-stat-val">90</div><div class="kit-stat-label">Day Protocol</div></div><div class="kit-stat"><div class="kit-stat-val">4–8</div><div class="kit-stat-label">Weeks to Peak</div></div></div>
+        <div class="detail-tabs"><button class="dtab active" onclick="showTab(this,'cog-overview')">Overview</button><button class="dtab" onclick="showTab(this,'cog-howto')">How to Use</button><button class="dtab" onclick="showTab(this,'cog-reviews')">Reviews</button></div>
+        <div class="dtab-panel active" id="cog-overview">
+          <ul class="benefit-list">
+            <li class="benefit-item"><span class="benefit-icon">🍄</span><span class="benefit-text"><strong>Neurogenesis support</strong> — Lion's Mane stimulates Nerve Growth Factor (NGF) synthesis, promoting growth of new neural connections and protecting existing neurons from age-related degeneration.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🧪</span><span class="benefit-text"><strong>Memory consolidation</strong> — Bacopa monnieri enhances dendritic branching in hippocampal neurons, directly improving memory formation and retrieval speed after 8+ weeks of use.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">⚡</span><span class="benefit-text"><strong>Sustained focus without stimulants</strong> — L-Theanine with Omega-3 provides calm alertness by increasing alpha brain wave activity without the cortisol spike of caffeine.</span></li>
+            <li class="benefit-item"><span class="benefit-icon">🛡️</span><span class="benefit-text"><strong>Long-term neuroprotection</strong> — Phosphatidylserine maintains neuronal membrane integrity, while Ginkgo biloba improves cerebral blood flow — both linked to reduced dementia risk in longitudinal studies.</span></li>
+          </ul>
+        </div>
+        <div class="dtab-panel" id="cog-howto">
+          <div class="protocol-visual"><span class="pv-title">Your daily protocol</span><div class="pv-stacks"><div class="pv-stack"><span class="pv-stack-label">☀️ Morning (AM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Lion's Mane 500mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">OmegaMax 1000mg</span><span class="pv-item-dose">2 softgels</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">L-Theanine 200mg</span><span class="pv-item-dose">1 capsule</span></div></div><div class="pv-stack"><span class="pv-stack-label">🌙 Evening (PM)</span><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Bacopa Monnieri 300mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Phosphatidylserine 200mg</span><span class="pv-item-dose">1 capsule</span></div><div class="pv-item"><span class="pv-item-dot"></span><span class="pv-item-name">Ginkgo Biloba 120mg</span><span class="pv-item-dose">1 capsule</span></div></div></div></div>
+          <ul class="usage-steps"><li class="usage-step"><span class="usage-num">1</span><span class="usage-text"><strong>Bacopa takes 8–12 weeks</strong> — unlike stimulants, bacopa's cognitive benefits are cumulative. Expect the memory improvements to peak around week 10–12.</span></li><li class="usage-step"><span class="usage-num">2</span><span class="usage-text"><strong>Ginkgo biloba is a blood thinner</strong> — avoid combining with warfarin or aspirin without physician consultation. Discontinue 2 weeks before any surgical procedure.</span></li></ul>
+        </div>
+        <div class="dtab-panel" id="cog-reviews"><div class="review-list"><div class="review-card"><div class="review-header"><div><div class="reviewer-name">Priya Nair <span class="verified-badge">✓ Verified</span></div><div class="reviewer-meta">Dubai, UAE · 4 months ago</div></div><div class="review-rating">★★★★★</div></div><div class="review-text">As a finance professional working 12-hour days, the mental fatigue was becoming serious. After 6 weeks on this protocol, my afternoon productivity has transformed. I'm noticeably sharper in late-day meetings. The lion's mane + bacopa combination is doing something real.</div><div class="review-tag">🧠 Professional performance</div></div></div></div>
+      </div>
+      <div class="purchase-card"><div class="pc-kit-name">Brain & Focus Protocol</div><div class="pc-tagline">90-day cognitive enhancement system</div><div class="pc-price-row"><span class="pc-price">AED 210</span><span class="pc-was">AED 275</span><span class="pc-save">Save 24%</span></div><div class="pc-period">Per month supply · Free UAE shipping</div><div class="pc-includes"><span class="pc-includes-title">Kit includes</span><div class="pc-item">Lion's Mane Extract 500mg (30)</div><div class="pc-item">Bacopa Monnieri 300mg (30)</div><div class="pc-item">Phosphatidylserine 200mg (30)</div><div class="pc-item">L-Theanine 200mg (30)</div><div class="pc-item">Ginkgo Biloba 120mg (30)</div><div class="pc-item">OmegaMax 1000mg (60)</div></div><div class="shopify-slot">🛒 Shopify Buy Button</div><a href="https://wa.me/971509172876?text=Hi%2C+I'd+like+to+order+the+Excell+Brain+%26+Focus+Protocol+(AED+210%2Fmonth)." class="btn-kit-wa" target="_blank">💬 Order via WhatsApp — AED 210</a><div class="pc-free-consult">🎁 <strong>Free expert consultation</strong> included</div><div class="pc-guarantees"><div class="pc-guarantee">100% Halal Certified</div><div class="pc-guarantee">GMP manufactured, third-party tested</div><div class="pc-guarantee">Free UAE delivery on orders 200+ AED</div></div></div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/971509172876?text=Hi+Excell%2C+I%27d+like+help+choosing+the+right+protocol+kit." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><span class="logo-f">Excell<span>.</span></span><p>Precision health and beauty protocols powered by AI Digital Twin technology. Clinically formulated, Halal certified, built for GCC & Africa.</p><div class="footer-socials"><a href="https://www.linkedin.com/company/excellnutrients" target="_blank" class="social-btn">in</a><a href="https://x.com/Excellnutrients" target="_blank" class="social-btn">𝕏</a><a href="https://www.pinterest.com/excellnutrients/" target="_blank" class="social-btn">P</a><a href="https://wa.me/971509172876" target="_blank" class="social-btn">W</a></div></div>
+    <div class="footer-col"><h4>Platform</h4><ul><li><a href="https://twin.excellnutrients.com" target="_blank">Digital Twin Assessment</a></li><li><a href="shop.html">Shop by Concern</a></li><li><a href="kits.html">Protocol Kits</a></li><li><a href="loyalty.html">Excell Circle</a></li></ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul><li><a href="education.html">Education Hub</a></li><li><a href="education.html#ingredients">Ingredient Science</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="partners.html">Partner Programme</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Excell Nutrients. All rights reserved. Digital Twin Engine powered by <a href="https://validatedsupplements.com" style="color:var(--sage-light)" target="_blank">Phytomedix technology</a>.</p><div class="cert-row"><span class="cert-tag">Halal Certified</span><span class="cert-tag">GMP</span><span class="cert-tag">Gluten Free</span></div></div>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
+function toggleMenu(){var m=document.getElementById('mobileMenu');var o=m.classList.toggle('open');m.style.display=o?'flex':'none';document.body.style.overflow=o?'hidden':''}
+document.getElementById('mobileMenu').style.display='none';
+var isAr=false;
+function toggleLang(){isAr=!isAr;document.documentElement.setAttribute('dir',isAr?'rtl':'ltr');document.documentElement.setAttribute('lang',isAr?'ar':'en');document.querySelector('.btn-lang').textContent=isAr?'English':'عربي'}
+
+function showKit(id, triggerEl) {
+  document.querySelectorAll('.kit-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.kit-tab').forEach(function(t){t.classList.remove('active')});
+  var panel = document.getElementById('kit-'+id);
+  if(panel) panel.classList.add('active');
+  if(triggerEl) triggerEl.classList.add('active');
+  window.scrollTo({top:document.querySelector('.kit-selector-wrap').offsetTop-68,behavior:'smooth'});
+}
+
+function showTab(btn, panelId) {
+  var kitPanel = btn.closest('.kit-panel');
+  kitPanel.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active')});
+  kitPanel.querySelectorAll('.dtab-panel').forEach(function(p){p.classList.remove('active')});
+  btn.classList.add('active');
+  var panel = document.getElementById(panelId);
+  if(panel) panel.classList.add('active');
+}
+
+function toggleIng(card) {
+  card.classList.toggle('open');
+}
+
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+document.addEventListener('DOMContentLoaded',function(){
+  var params=new URLSearchParams(window.location.search);
+  var kit=params.get('kit')||window.location.hash.replace('#','');
+  var validKits=['aging','skin','metabolic','mens','womens','cognitive'];
+  if(kit&&validKits.includes(kit)){
+    var btn=document.querySelector('[onclick*="\''+kit+'\'"]');
+    showKit(kit,btn);
+  }
+});
+</script>
+</body>
+</html>

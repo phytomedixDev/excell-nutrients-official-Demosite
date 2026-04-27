@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Education Hub — Excell Nutrients | Ingredient Science & Health Guides</title>
+<meta name="description" content="Evidence-based guides on NMN, Glutathione, Berberine and more. Expert articles on healthy aging and precision nutrition for UAE.">
+<meta property="og:title" content="Education Hub — Excell Nutrients | Ingredient Science & Health Guides">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.excellnutrients.com/education.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#2d6a4f;--sage-mid:#40916c;--sage-light:#74c69d;--sage-pale:#d8f3dc;--sage-ultra:#f0faf3;--gold:#b5924c;--gold-mid:#c9a96e;--gold-pale:#fdf3e3;--ink:#0d1a14;--ink-soft:#3a4a41;--ink-muted:#6b7d72;--cream:#faf8f4;--white:#ffffff;--border:rgba(45,106,79,0.13);--border-mid:rgba(45,106,79,0.22);--ff-display:'Cormorant Garamond',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ff-mono:'DM Mono',monospace;--ease:cubic-bezier(0.22,1,0.36,1);--r:10px;--r-lg:16px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--ink);overflow-x:hidden}
+.page-wrap{padding-top:68px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(250,248,244,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 40px rgba(13,26,20,0.07)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:34px;height:34px;background:var(--sage);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:18px;height:18px}
+.logo-text{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--ink)}
+.logo-text span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--sage)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.btn-lang{font-size:.72rem;font-weight:500;color:var(--ink-muted);background:none;border:1px solid var(--border);border-radius:20px;padding:5px 13px;cursor:pointer;transition:all .2s}
+.btn-lang:hover{border-color:var(--gold);color:var(--gold)}
+.btn-nav-cta{font-size:.75rem;font-weight:500;color:var(--white);background:var(--sage);border:none;border-radius:6px;padding:10px 18px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-nav-cta:hover{background:var(--sage-mid)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s var(--ease)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--ff-display);font-size:2rem;font-weight:300;color:var(--ink);text-decoration:none}
+.close-menu{position:absolute;top:24px;right:5vw;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.hero-eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--gold)}
+.section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.section-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;letter-spacing:-.01em}
+.section-title em{font-style:italic;color:var(--sage)}
+footer{background:var(--ink);padding:56px 5vw 28px;color:rgba(255,255,255,.5);position:relative;z-index:1;margin-top:60px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.footer-brand .logo-f{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--white);margin-bottom:10px;display:block}
+.footer-brand .logo-f span{color:var(--gold)}
+.footer-brand p{font-size:.78rem;font-weight:300;line-height:1.65;margin-bottom:16px;max-width:240px}
+.footer-socials{display:flex;gap:8px}
+.social-btn{width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;font-size:.72rem;transition:all .2s}
+.social-btn:hover{border-color:var(--sage-light);color:var(--sage-light)}
+.footer-col h4{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.72rem}
+.cert-row{display:flex;gap:8px}
+.cert-tag{font-size:.65rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-light);background:rgba(116,198,157,.1);border:1px solid rgba(116,198,157,.2);border-radius:4px;padding:3px 9px}
+.wa-float{position:fixed;bottom:28px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25D366;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:all .2s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:26px;height:26px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links,.btn-lang{display:none}.hamburger{display:flex}.footer-grid{grid-template-columns:1fr}}
+</style>
+<style>
+.edu-hero{padding:60px 5vw 48px;background:var(--white);border-bottom:1px solid var(--border)}
+.edu-hero h1{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;line-height:1.07;letter-spacing:-.02em;margin-bottom:.75rem}
+.edu-hero h1 em{font-style:italic;color:var(--sage)}
+.edu-hero p{font-size:.95rem;font-weight:300;color:var(--ink-muted);max-width:500px;line-height:1.7;margin-bottom:1.5rem}
+.filter-tabs{display:flex;gap:.5rem;flex-wrap:wrap}
+.tab-btn{font-family:var(--ff-body);font-size:.75rem;font-weight:500;padding:8px 18px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--ink-muted);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab-btn:hover{border-color:var(--sage);color:var(--sage)}
+.tab-btn.active{background:var(--sage);color:var(--white);border-color:var(--sage)}
+.edu-main{display:grid;grid-template-columns:1fr 290px;gap:0;max-width:1400px;margin:0 auto;padding:40px 5vw}
+.edu-sidebar{padding-left:32px;border-left:1px solid var(--border)}
+.section-label{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.section-label::before{content:'';display:block;width:16px;height:1px;background:var(--gold)}
+.featured-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1fr;transition:all .3s var(--ease)}
+.featured-card:hover{box-shadow:0 12px 40px rgba(45,106,79,.09);transform:translateY(-2px)}
+.featured-img{background:linear-gradient(135deg,var(--sage) 0%,#1a4d35 100%);min-height:280px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.featured-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:center}
+.feat-cat{font-family:var(--ff-mono);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:.75rem}
+.feat-title{font-family:var(--ff-display);font-size:1.85rem;font-weight:400;line-height:1.15;margin-bottom:.75rem}
+.feat-excerpt{font-size:.85rem;font-weight:300;color:var(--ink-muted);line-height:1.7;margin-bottom:1.25rem}
+.feat-meta{display:flex;align-items:center;gap:.75rem;font-size:.7rem;color:var(--ink-muted);font-family:var(--ff-mono);margin-bottom:1.25rem;flex-wrap:wrap}
+.feat-tag{background:var(--sage-pale);color:var(--sage);padding:2px 8px;border-radius:20px;font-size:.62rem;font-weight:500}
+.btn-read{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--sage);text-decoration:none;transition:gap .2s}
+.btn-read:hover{gap:10px}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.25rem;margin-bottom:2.5rem}
+.article-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all .3s var(--ease);display:flex;flex-direction:column}
+.article-card:hover{box-shadow:0 8px 32px rgba(45,106,79,.09);transform:translateY(-3px);border-color:var(--sage-light)}
+.article-card.hidden{display:none}
+.art-img{height:155px;background:var(--sage-ultra);display:flex;align-items:center;justify-content:center;font-size:2.5rem;border-bottom:1px solid var(--border)}
+.art-body{padding:18px 16px;flex:1;display:flex;flex-direction:column}
+.art-cat{font-family:var(--ff-mono);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:.5rem}
+.art-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:400;line-height:1.2;margin-bottom:.5rem;color:var(--ink)}
+.art-excerpt{font-size:.78rem;font-weight:300;color:var(--ink-muted);line-height:1.6;flex:1;margin-bottom:.85rem}
+.art-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:.75rem}
+.art-meta{font-size:.68rem;color:var(--ink-muted);font-family:var(--ff-mono)}
+.art-read-btn{font-size:.72rem;font-weight:500;color:var(--sage);text-decoration:none}
+.ing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem;margin-bottom:3rem}
+.ing-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 16px;transition:all .25s var(--ease);cursor:pointer}
+.ing-card:hover{border-color:var(--sage-light);box-shadow:0 6px 20px rgba(45,106,79,.08);transform:translateY(-2px)}
+.ing-emoji{font-size:1.8rem;margin-bottom:.5rem;display:block}
+.ing-name{font-family:var(--ff-display);font-size:1rem;font-weight:400;margin-bottom:.25rem}
+.ing-desc{font-size:.72rem;color:var(--ink-muted);line-height:1.55}
+.ing-badge{display:inline-block;font-size:.6rem;font-weight:500;padding:2px 7px;border-radius:10px;background:var(--sage-pale);color:var(--sage);margin-top:.5rem}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem;margin-bottom:3rem}
+.video-card{background:var(--ink);border-radius:var(--r-lg);overflow:hidden;transition:all .25s var(--ease);cursor:pointer}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,26,20,.2)}
+.video-thumb{height:145px;background:linear-gradient(135deg,var(--sage) 0%,var(--ink) 100%);display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
+.play-btn{position:absolute;width:44px;height:44px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.video-body{padding:16px}
+.video-ep{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.1em;color:var(--sage-light);margin-bottom:.4rem;text-transform:uppercase}
+.video-title{font-family:var(--ff-display);font-size:1rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:.4rem}
+.video-dur{font-size:.7rem;color:rgba(255,255,255,.4);font-family:var(--ff-mono)}
+.downloads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin-bottom:2rem}
+.dl-card{background:var(--gold-pale);border:1px solid rgba(181,146,76,.2);border-radius:var(--r);padding:18px 16px;display:flex;gap:12px;align-items:flex-start;transition:all .2s;cursor:pointer;text-decoration:none}
+.dl-card:hover{background:var(--white);box-shadow:0 4px 16px rgba(181,146,76,.12)}
+.dl-icon{font-size:1.8rem;flex-shrink:0}
+.dl-title{font-family:var(--ff-display);font-size:.95rem;font-weight:400;color:var(--ink);margin-bottom:.25rem}
+.dl-desc{font-size:.72rem;color:var(--ink-muted);line-height:1.5}
+.dl-badge{display:inline-block;font-size:.58rem;font-weight:500;padding:2px 7px;border-radius:10px;background:var(--gold);color:var(--white);margin-top:.4rem}
+.widget-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:400;margin-bottom:1rem;color:var(--ink)}
+.sidebar-widget{margin-bottom:2rem}
+.twin-widget{background:linear-gradient(135deg,var(--sage) 0%,#1a4d35 100%);border-radius:var(--r-lg);padding:24px 20px;text-align:center;margin-bottom:2rem}
+.twin-widget h3{font-family:var(--ff-display);font-size:1.25rem;font-weight:300;color:var(--white);margin-bottom:.5rem;line-height:1.3}
+.twin-widget p{font-size:.78rem;color:rgba(255,255,255,.7);margin-bottom:1rem;line-height:1.55}
+.twin-widget a{display:block;font-size:.78rem;font-weight:500;color:var(--sage);background:var(--white);border-radius:6px;padding:10px;text-decoration:none}
+.most-read-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.most-read-list li{display:flex;gap:10px;align-items:flex-start}
+.mr-num{font-family:var(--ff-mono);font-size:.65rem;color:var(--gold);font-weight:500;min-width:18px;margin-top:2px}
+.mr-title{font-size:.82rem;color:var(--ink-soft);line-height:1.45;cursor:pointer}
+.newsletter-form{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px}
+.nl-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--r);font-family:var(--ff-body);font-size:.82rem;color:var(--ink);background:var(--cream);margin-bottom:.6rem}
+.nl-input:focus{outline:none;border-color:var(--sage)}
+.nl-btn{width:100%;padding:10px;background:var(--sage);color:var(--white);border:none;border-radius:var(--r);font-family:var(--ff-body);font-size:.82rem;font-weight:500;cursor:pointer}
+.concern-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.ctag{font-size:.72rem;color:var(--ink-muted);background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 12px;cursor:pointer;text-decoration:none;transition:all .2s}
+.ctag:hover{border-color:var(--sage);color:var(--sage)}
+@media(max-width:1024px){.edu-main{grid-template-columns:1fr}.edu-sidebar{padding-left:0;border-left:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2rem}}
+@media(max-width:768px){.featured-card{grid-template-columns:1fr}.featured-img{min-height:180px}}
+@media(max-width:480px){.article-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3C10 3 6 6 6 10.5C6 13.5 7.8 16 10 16C12.2 16 14 13.5 14 10.5C14 6 10 3 10 3Z" fill="white" opacity=".9"/></svg></div>
+    <span class="logo-text">Excell<span>.</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="kits.html">Protocol Kits</a></li>
+    <li><a href="education.html" class="active">Learn</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="loyalty.html">Rewards</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-lang" onclick="toggleLang()">&#1593;&#1585;&#1576;&#1610;</button>
+    <a href="https://twin.excellnutrients.com" target="_blank" class="btn-nav-cta">Start Assessment &#x2192;</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">&#x2715;</button>
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="kits.html">Protocol Kits</a>
+  <a href="education.html" class="active">Learn</a><a href="about.html">About</a>
+  <a href="loyalty.html">Rewards</a><a href="contact.html">Contact</a>
+</div>
+<div class="page-wrap">
+
+  <div class="edu-hero">
+    <div class="hero-eyebrow">Excell Education Hub</div>
+    <h1>Science-backed knowledge<br>for <em>smarter health</em></h1>
+    <p>Every article is written or reviewed by clinicians and backed by peer-reviewed research. No sponsored content, no guesswork — just evidence.</p>
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterArticles('all',this)">All Topics</button>
+      <button class="tab-btn" onclick="filterArticles('aging',this)">Aging</button>
+      <button class="tab-btn" onclick="filterArticles('skin',this)">Skin</button>
+      <button class="tab-btn" onclick="filterArticles('metabolic',this)">Metabolic</button>
+      <button class="tab-btn" onclick="filterArticles('mens',this)">Men's Health</button>
+      <button class="tab-btn" onclick="filterArticles('womens',this)">Women's Health</button>
+      <button class="tab-btn" onclick="filterArticles('cognitive',this)">Cognitive</button>
+      <button class="tab-btn" onclick="filterArticles('gcc',this)">GCC Focus</button>
+    </div>
+  </div>
+
+  <div class="edu-main">
+    <div class="articles-area">
+      <div class="section-label">Featured Article</div>
+      <div class="featured-card reveal">
+        <div class="featured-img">&#x1F9EC;</div>
+        <div class="featured-body">
+          <span class="feat-cat">Aging &amp; Longevity</span>
+          <div class="feat-title">NMN and NAD+: The Science of Cellular Energy Restoration</div>
+          <p class="feat-excerpt">NAD+ levels decline by up to 50% between ages 40 and 60. Here&#x2019;s what the clinical evidence says about NMN supplementation, optimal dosing, and what it actually does inside your cells.</p>
+          <div class="feat-meta"><span>8 min read</span><span class="feat-tag">Clinician Reviewed</span><span>March 2025</span></div>
+          <a href="#" class="btn-read">Read Article &#x2192;</a>
+        </div>
+      </div>
+
+      <div class="section-label">Latest Articles</div>
+      <div class="article-grid" id="articleGrid">
+        <div class="article-card" data-cat="skin"><div class="art-img">&#x2728;</div><div class="art-body"><span class="art-cat">Skin Health</span><div class="art-title">Glutathione: Why it&#x2019;s the Gulf&#x2019;s Most In-Demand Supplement</div><p class="art-excerpt">The master antioxidant and its role in melanin regulation, skin brightening, and anti-aging. What the evidence actually shows.</p><div class="art-footer"><span class="art-meta">6 min &#xB7; Clinician reviewed</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="metabolic gcc"><div class="art-img">&#x1F9B8;</div><div class="art-body"><span class="art-cat">Metabolic Health</span><div class="art-title">Berberine vs Metformin: What the 2024 Trials Revealed</div><p class="art-excerpt">A head-to-head analysis of mechanisms, HbA1c outcomes, and side-effect profiles. Essential reading for anyone managing blood sugar.</p><div class="art-footer"><span class="art-meta">9 min &#xB7; Peer reviewed</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="gcc"><div class="art-img">&#x2600;&#xFE0F;</div><div class="art-body"><span class="art-cat">GCC Focus</span><div class="art-title">Vitamin D Deficiency in the UAE: The Sunshine Paradox</div><p class="art-excerpt">Over 80% of UAE residents are Vitamin D deficient. The environmental and lifestyle factors &#x2014; and the optimal protocol to correct it.</p><div class="art-footer"><span class="art-meta">7 min &#xB7; UAE specific</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="mens"><div class="art-img">&#x26A1;</div><div class="art-body"><span class="art-cat">Men&#x2019;s Health</span><div class="art-title">Ashwagandha and Testosterone: Separating Fact from Marketing</div><p class="art-excerpt">KSM-66 clinical trials show real results &#x2014; but only in specific conditions. Here&#x2019;s what the research actually says.</p><div class="art-footer"><span class="art-meta">5 min &#xB7; Evidence-based</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="womens"><div class="art-img">&#x1F338;</div><div class="art-body"><span class="art-cat">Women&#x2019;s Health</span><div class="art-title">Myo-Inositol and PCOS: The Evidence is Stronger Than You Think</div><p class="art-excerpt">Multiple RCTs confirm inositol&#x2019;s role in PCOS, but dosing and the myo:D-chiro ratio matter enormously.</p><div class="art-footer"><span class="art-meta">7 min &#xB7; RCT evidence</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="cognitive"><div class="art-img">&#x1F9E0;</div><div class="art-body"><span class="art-cat">Brain Health</span><div class="art-title">Lion&#x2019;s Mane and Neuroplasticity: What NGF Actually Does</div><p class="art-excerpt">Nerve growth factor, hericenones, erinacines &#x2014; a plain-English explanation of how Lion&#x2019;s Mane supports cognitive health.</p><div class="art-footer"><span class="art-meta">6 min &#xB7; Neuroscience</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="aging"><div class="art-img">&#x2764;&#xFE0F;</div><div class="art-body"><span class="art-cat">Aging &amp; Cardiovascular</span><div class="art-title">CoQ10 Ubiquinol vs Ubiquinone: The Absorption Difference</div><p class="art-excerpt">The active ubiquinol form shows 3x better bioavailability &#x2014; here&#x2019;s why that matters after 40.</p><div class="art-footer"><span class="art-meta">5 min &#xB7; Bioavailability</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="gcc metabolic"><div class="art-img">&#x1F54C;</div><div class="art-body"><span class="art-cat">GCC Focus</span><div class="art-title">Supplementing During Ramadan: A Clinical Protocol Guide</div><p class="art-excerpt">How to time supplements around Suhoor and Iftar, which compounds to prioritise, and what to avoid during fasting.</p><div class="art-footer"><span class="art-meta">8 min &#xB7; GCC specific</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+        <div class="article-card" data-cat="skin aging"><div class="art-img">&#x1F30A;</div><div class="art-body"><span class="art-cat">Skin &amp; Aging</span><div class="art-title">Marine Collagen: Type I vs III, Peptide Size, and Why Source Matters</div><p class="art-excerpt">The market is flooded with collagen products of wildly varying quality. Here&#x2019;s a framework for choosing what works.</p><div class="art-footer"><span class="art-meta">6 min &#xB7; Sourcing guide</span><a href="#" class="art-read-btn">Read &#x2192;</a></div></div></div>
+      </div>
+
+      <div class="section-label" id="ingredients" style="margin-top:2rem">Ingredient Science Index</div>
+      <div class="ing-grid reveal">
+        <div class="ing-card"><span class="ing-emoji">&#x1F9EC;</span><div class="ing-name">NMN 500mg</div><div class="ing-desc">NAD+ precursor. Cellular energy, DNA repair, biological aging.</div><span class="ing-badge">Longevity</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x2728;</span><div class="ing-name">Glutathione</div><div class="ing-desc">Master antioxidant. Skin brightening, oxidative stress, detox.</div><span class="ing-badge">Skin + Aging</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F33F;</span><div class="ing-name">Berberine HCl</div><div class="ing-desc">AMPK activation. Blood glucose, insulin sensitivity, metabolism.</div><span class="ing-badge">Metabolic</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x26A1;</span><div class="ing-name">KSM-66 Ashwagandha</div><div class="ing-desc">Cortisol reduction, testosterone support, adaptogenic response.</div><span class="ing-badge">Men&#x2019;s Health</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F41F;</span><div class="ing-name">Omega-3 EPA/DHA</div><div class="ing-desc">Cardiovascular, brain health, anti-inflammatory, triglycerides.</div><span class="ing-badge">Cardio + Brain</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x2600;&#xFE0F;</span><div class="ing-name">D3 + K2 MK-7</div><div class="ing-desc">Immune, bone density, calcium routing. GCC-essential.</div><span class="ing-badge">Foundation</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x2764;&#xFE0F;</span><div class="ing-name">CoQ10 Ubiquinol</div><div class="ing-desc">Mitochondrial energy, cardiovascular support, antioxidant.</div><span class="ing-badge">Heart + Energy</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F9E0;</span><div class="ing-name">Lion&#x2019;s Mane</div><div class="ing-desc">NGF synthesis. Memory, focus, neuroplasticity, cognitive resilience.</div><span class="ing-badge">Cognitive</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F30A;</span><div class="ing-name">Marine Collagen</div><div class="ing-desc">Type I &amp; III peptides. Skin elasticity, joints, hair, gut lining.</div><span class="ing-badge">Beauty + Joints</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F338;</span><div class="ing-name">Myo-Inositol</div><div class="ing-desc">PCOS, insulin sensitivity, ovarian function, hormonal balance.</div><span class="ing-badge">Women&#x2019;s Health</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F347;</span><div class="ing-name">Resveratrol</div><div class="ing-desc">Sirtuin activation, epigenetic repair, cardiovascular protection.</div><span class="ing-badge">Longevity</span></div>
+        <div class="ing-card"><span class="ing-emoji">&#x1F9B4;</span><div class="ing-name">Glucosamine + MSM</div><div class="ing-desc">Cartilage repair, joint lubrication, mobility, inflammation.</div><span class="ing-badge">Joints</span></div>
+      </div>
+
+      <div class="section-label" id="videos">Excell Explains &#x2014; Video Series</div>
+      <div class="video-grid reveal">
+        <div class="video-card"><div class="video-thumb">&#x1F9EC;<div class="play-btn">&#x25B6;</div></div><div class="video-body"><div class="video-ep">Episode 01</div><div class="video-title">How Your Digital Twin Works</div><div class="video-dur">12 min &#x2022; Dr. Ananya Rao</div></div></div>
+        <div class="video-card"><div class="video-thumb">&#x1F9B8;<div class="play-btn">&#x25B6;</div></div><div class="video-body"><div class="video-ep">Episode 02</div><div class="video-title">Reading Your Blood Work: 7 Numbers That Matter</div><div class="video-dur">18 min &#x2022; Clinician narrated</div></div></div>
+        <div class="video-card"><div class="video-thumb">&#x1F48A;<div class="play-btn">&#x25B6;</div></div><div class="video-body"><div class="video-ep">Episode 03</div><div class="video-title">AM vs PM Stacks: Why Timing Changes Everything</div><div class="video-dur">9 min &#x2022; Pharmacist reviewed</div></div></div>
+        <div class="video-card"><div class="video-thumb">&#x2600;&#xFE0F;<div class="play-btn">&#x25B6;</div></div><div class="video-body"><div class="video-ep">Episode 04</div><div class="video-title">GCC Essentials: What Every UAE Resident Needs</div><div class="video-dur">11 min &#x2022; GCC specialist</div></div></div>
+      </div>
+
+      <div class="section-label">Free Downloadable Guides</div>
+      <div class="downloads-grid reveal">
+        <a href="#" class="dl-card"><div class="dl-icon">&#x1F4CB;</div><div><div class="dl-title">UAE Supplement Starter Guide</div><div class="dl-desc">Essential supplements for the GCC climate, diet, and lifestyle. PDF, 18 pages.</div><span class="dl-badge">Free Download</span></div></a>
+        <a href="#" class="dl-card"><div class="dl-icon">&#x1F9B8;</div><div><div class="dl-title">Blood Work Reference Card</div><div class="dl-desc">The 12 biomarkers to track for healthy aging, with optimal ranges.</div><span class="dl-badge">Free Download</span></div></a>
+        <a href="#" class="dl-card"><div class="dl-icon">&#x1F319;</div><div><div class="dl-title">Ramadan Supplement Protocol</div><div class="dl-desc">How to time supplements around Suhoor and Iftar safely.</div><span class="dl-badge">Free Download</span></div></a>
+        <a href="#" class="dl-card"><div class="dl-icon">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div><div><div class="dl-title">Women&#x2019;s Hormone Health Guide</div><div class="dl-desc">PCOS, perimenopause, and cycle support through evidence-based nutrition.</div><span class="dl-badge">Free Download</span></div></a>
+      </div>
+    </div>
+
+    <aside class="edu-sidebar">
+      <div class="twin-widget">
+        <h3>Not sure which supplements are right for you?</h3>
+        <p>Let our AI Digital Twin build your personalised protocol in under 10 minutes.</p>
+        <a href="https://twin.excellnutrients.com" target="_blank">&#x1F9EC; Start Free Assessment &#x2192;</a>
+      </div>
+      <div class="sidebar-widget">
+        <div class="widget-title">Most Read</div>
+        <ul class="most-read-list">
+          <li><span class="mr-num">01</span><span class="mr-title">NMN and NAD+: The Science of Cellular Energy Restoration</span></li>
+          <li><span class="mr-num">02</span><span class="mr-title">Vitamin D Deficiency in the UAE: The Sunshine Paradox</span></li>
+          <li><span class="mr-num">03</span><span class="mr-title">Berberine vs Metformin: 2024 Trial Analysis</span></li>
+          <li><span class="mr-num">04</span><span class="mr-title">Glutathione: Gulf&#x2019;s Most In-Demand Supplement</span></li>
+          <li><span class="mr-num">05</span><span class="mr-title">Supplementing During Ramadan: A Clinical Guide</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <div class="newsletter-form">
+          <div class="widget-title">Weekly Health Digest</div>
+          <p>One evidence-based article every week. No spam.</p>
+          <input class="nl-input" type="email" placeholder="Your email address">
+          <button class="nl-btn">Subscribe Free</button>
+        </div>
+      </div>
+      <div class="sidebar-widget">
+        <div class="widget-title">Browse by Concern</div>
+        <div class="concern-tags">
+          <a href="shop.html?concern=aging" class="ctag">Aging</a>
+          <a href="shop.html?concern=skin" class="ctag">Skin</a>
+          <a href="shop.html?concern=metabolic" class="ctag">Blood Sugar</a>
+          <a href="shop.html?concern=cardio" class="ctag">Heart</a>
+          <a href="shop.html?concern=mens" class="ctag">Men&#x2019;s Health</a>
+          <a href="shop.html?concern=womens" class="ctag">Women&#x2019;s Health</a>
+          <a href="shop.html?concern=cognitive" class="ctag">Brain</a>
+          <a href="shop.html?concern=joints" class="ctag">Joints</a>
+          <a href="shop.html?concern=weight" class="ctag">Weight</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<a class="wa-float" href="https://wa.me/971509172876?text=Hi+Excell%2C+I+have+a+question." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-f">Excell<span>.</span></span>
+      <p>Precision health protocols powered by AI Digital Twin technology. Clinically formulated, Halal certified, built for GCC &amp; Africa.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/excellnutrients" target="_blank" class="social-btn">in</a>
+        <a href="https://x.com/Excellnutrients" target="_blank" class="social-btn">X</a>
+        <a href="https://wa.me/971509172876" target="_blank" class="social-btn">W</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Platform</h4><ul>
+      <li><a href="https://twin.excellnutrients.com" target="_blank">Digital Twin</a></li>
+      <li><a href="shop.html">Shop by Concern</a></li>
+      <li><a href="kits.html">Protocol Kits</a></li>
+      <li><a href="loyalty.html">Excell Circle</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="education.html">Education Hub</a></li>
+      <li><a href="education.html#ingredients">Ingredient Science</a></li>
+      <li><a href="education.html#videos">Excell Explains</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="partners.html">Partner Programme</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Excell Nutrients. Powered by <a href="https://validatedsupplements.com" style="color:var(--sage-light)" target="_blank">Phytomedix technology</a>.</p>
+    <div class="cert-row"><span class="cert-tag">Halal Certified</span><span class="cert-tag">GMP</span><span class="cert-tag">Gluten Free</span></div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20);});
+function toggleMenu(){var m=document.getElementById('mobileMenu');var o=m.classList.toggle('open');m.style.display=o?'flex':'none';document.body.style.overflow=o?'hidden':'';}
+document.getElementById('mobileMenu').style.display='none';
+var isAr=false;
+function toggleLang(){isAr=!isAr;document.documentElement.setAttribute('dir',isAr?'rtl':'ltr');document.documentElement.setAttribute('lang',isAr?'ar':'en');document.querySelector('.btn-lang').textContent=isAr?'English':'عربي';}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+<script>
+function filterArticles(cat,btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(function(c){
+    var cats=c.getAttribute('data-cat')||'';
+    c.classList.toggle('hidden',cat!=='all'&&!cats.includes(cat));
+  });
+}
+</script>
+</body>
+</html>

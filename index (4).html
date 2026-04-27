@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excell Nutrients — Precision Health & Longevity</title>
+<meta name="description" content="AI-powered Digital Twin Health Assessment. Personalised supplement protocols for aging, skin health, and chronic wellness. GCC & Africa's most advanced home treatment platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:       #0d1a14;
+  --ink-soft:  #3a4a41;
+  --ink-muted: #6b7d72;
+  --sage:      #2d6a4f;
+  --sage-mid:  #40916c;
+  --sage-light:#74c69d;
+  --sage-pale: #d8f3dc;
+  --gold:      #b5924c;
+  --gold-pale: #f5ead8;
+  --cream:     #faf8f4;
+  --white:     #ffffff;
+  --border:    rgba(45,106,79,0.15);
+  --border-gold: rgba(181,146,76,0.25);
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'DM Sans', sans-serif;
+  --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ──────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── NAV ────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  height: 72px;
+  background: rgba(250,248,244,0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s var(--ease);
+}
+nav.scrolled { box-shadow: 0 2px 40px rgba(13,26,20,0.08); }
+.nav-logo {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sage);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.btn-lang {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-lang:hover { border-color: var(--sage); color: var(--sage); }
+.btn-cta-nav {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  background: var(--sage);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-cta-nav:hover { background: var(--sage-mid); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: all 0.3s;
+}
+
+/* ── HERO ───────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 100px 4vw 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 40%, rgba(116,198,157,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(181,146,76,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-left {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1s var(--ease) both;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--sage);
+}
+.hero-title strong {
+  font-weight: 600;
+  display: block;
+}
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 460px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--sage);
+  border: none;
+  border-radius: 4px;
+  padding: 16px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sage-mid);
+  transform: translateX(-100%);
+  transition: transform 0.3s var(--ease);
+}
+.btn-primary:hover::after { transform: translateX(0); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary svg { position: relative; z-index: 1; transition: transform 0.2s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--sage);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 15px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--sage); background: var(--sage-pale); }
+.hero-trust {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  flex-shrink: 0;
+}
+
+/* ── HERO RIGHT — TWIN CARD ─────────────────────────────────── */
+.hero-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 1s 0.2s var(--ease) both;
+}
+.twin-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 24px 80px rgba(13,26,20,0.10);
+  position: relative;
+}
+.twin-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 32px; right: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sage), var(--gold));
+  border-radius: 0 0 2px 2px;
+}
+.twin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.twin-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.twin-live {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-mid);
+}
+.twin-live::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage-mid);
+  animation: pulse 2s infinite;
+}
+.twin-score-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.twin-score-num {
+  font-family: var(--ff-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+}
+.twin-score-meta { padding-bottom: 6px; }
+.twin-score-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--sage);
+}
+.twin-score-sub {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+.twin-domains {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.domain-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.domain-name {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  width: 110px;
+  flex-shrink: 0;
+}
+.domain-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--sage-pale);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.domain-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--sage), var(--sage-light));
+  animation: barGrow 1.5s var(--ease) both;
+}
+.domain-fill.gold { background: linear-gradient(90deg, var(--gold), #d4b06a); }
+.domain-val {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ink);
+  width: 28px;
+  text-align: right;
+}
+.twin-protocol {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+.protocol-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.protocol-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.protocol-pill {
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.twin-cta {
+  display: block;
+  width: 100%;
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--white);
+  background: var(--sage);
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.twin-cta:hover { background: var(--sage-mid); }
+.twin-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 12px;
+}
+.twin-footer-item {
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── MARQUEE ────────────────────────────────────────────────── */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  padding: 14px 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee-item {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.marquee-item::after {
+  content: '◆';
+  font-size: 0.4rem;
+  color: var(--gold);
+}
+
+/* ── SECTION SHARED ─────────────────────────────────────────── */
+section { padding: 100px 4vw; position: relative; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--sage); }
+.section-sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* ── HOW IT WORKS ───────────────────────────────────────────── */
+.how-section { background: var(--white); }
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.how-step {
+  padding: 36px 28px;
+  border-right: 1px solid var(--border);
+  position: relative;
+  transition: background 0.3s;
+}
+.how-step:last-child { border-right: none; }
+.how-step:hover { background: var(--cream); }
+.how-num {
+  font-family: var(--ff-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(45,106,79,0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.how-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--sage-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.how-step h3 {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.how-step p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* ── CONCERNS / SHOP BY ─────────────────────────────────────── */
+.concerns-section {}
+.concerns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+.concern-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  background: var(--white);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.concern-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sage-pale);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.concern-card:hover { border-color: var(--sage); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45,106,79,0.10); }
+.concern-card:hover::after { opacity: 1; }
+.concern-icon {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.concern-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+.concern-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── KITS ───────────────────────────────────────────────────── */
+.kits-section { background: var(--ink); }
+.kits-section .section-title { color: var(--white); }
+.kits-section .section-sub { color: rgba(255,255,255,0.5); }
+.kits-section .section-label { color: var(--gold); }
+.kits-section .section-label::before { background: var(--gold); }
+.kits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.kit-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.kit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sage-mid), var(--gold));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.kit-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); transform: translateY(-4px); }
+.kit-card:hover::before { opacity: 1; }
+.kit-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  background: rgba(116,198,157,0.15);
+  border-radius: 3px;
+  padding: 3px 10px;
+  margin-bottom: 14px;
+}
+.kit-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.kit-card p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.kit-ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.kit-pill {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.kit-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kit-price {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--white);
+}
+.kit-price small {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+.kit-btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--sage-light);
+  background: rgba(116,198,157,0.12);
+  border: 1px solid rgba(116,198,157,0.2);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.kit-btn:hover { background: rgba(116,198,157,0.22); }
+
+/* ── STATS / NUMBERS ────────────────────────────────────────── */
+.stats-section {
+  background: var(--sage-pale);
+  padding: 60px 4vw;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.stat-block {
+  background: var(--sage-pale);
+  padding: 40px 28px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--ff-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--sage);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ── EDUCATION ──────────────────────────────────────────────── */
+.edu-section {}
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.edu-featured {
+  background: var(--sage);
+  border-radius: 12px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+}
+.edu-featured .cat {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+}
+.edu-featured h3 {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+.edu-featured p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.edu-read {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+.edu-read:hover { gap: 10px; }
+.edu-stack { display: flex; flex-direction: column; gap: 16px; }
+.edu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-decoration: none;
+  transition: all 0.25s;
+  flex: 1;
+}
+.edu-card:hover { border-color: var(--sage); box-shadow: 0 6px 24px rgba(45,106,79,0.08); }
+.edu-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--sage-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+.edu-card-body .cat {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.edu-card-body h4 {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* ── LOYALTY ────────────────────────────────────────────────── */
+.loyalty-section { background: var(--white); }
+.tiers-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.tier-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+.tier-card.featured {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+.tier-card:hover:not(.featured) { border-color: var(--sage); box-shadow: 0 12px 40px rgba(45,106,79,0.08); }
+.tier-badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-pale);
+  border-radius: 3px;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.tier-card.featured .tier-badge { background: rgba(181,146,76,0.25); }
+.tier-name {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.tier-card.featured .tier-name { color: var(--white); }
+.tier-desc {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.tier-card.featured .tier-desc { color: rgba(255,255,255,0.65); }
+.tier-perks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.tier-perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+}
+.tier-card.featured .tier-perks li { color: rgba(255,255,255,0.8); }
+.tier-perks li::before {
+  content: '✓';
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--sage-mid);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.tier-card.featured .tier-perks li::before { color: var(--sage-light); }
+
+/* ── CONSULT ────────────────────────────────────────────────── */
+.consult-section {
+  background: var(--gold-pale);
+  border-top: 1px solid var(--border-gold);
+}
+.consult-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.consult-form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+}
+.consult-form h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+.form-group label { font-size: 0.72rem; font-weight: 500; color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--ff-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--sage); }
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  padding: 60px 4vw 30px;
+  color: rgba(255,255,255,0.5);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand .logo {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  display: block;
+}
+.footer-brand .logo span { color: var(--gold); }
+.footer-brand p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  max-width: 260px;
+}
+.footer-social { display: flex; gap: 10px; }
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: var(--sage-light); color: var(--sage-light); }
+.footer-col h4 {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col a {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom p { font-size: 0.75rem; }
+.footer-certs { display: flex; gap: 1rem; }
+.cert-badge {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  background: rgba(116,198,157,0.1);
+  border: 1px solid rgba(116,198,157,0.2);
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+
+/* ── MOBILE MENU ────────────────────────────────────────────── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--cream);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--sage); }
+.close-menu {
+  position: absolute;
+  top: 24px;
+  right: 4vw;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes barGrow {
+  from { width: 0; }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .how-step:nth-child(2) { border-right: none; }
+  .how-step:nth-child(3) { border-top: 1px solid var(--border); }
+  .how-step:nth-child(4) { border-top: 1px solid var(--border); }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .btn-lang { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; padding-top: 80px; min-height: auto; }
+  .hero-right { margin-top: 2.5rem; }
+  .twin-card { max-width: 100%; }
+  .how-grid { grid-template-columns: 1fr; }
+  .how-step { border-right: none !important; border-top: 1px solid var(--border); }
+  .how-step:first-child { border-top: none; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .tiers-row { grid-template-columns: 1fr; }
+  .consult-inner { grid-template-columns: 1fr; gap: 30px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .concerns-grid { grid-template-columns: 1fr 1fr; }
+  .kits-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .concerns-grid { grid-template-columns: 1fr; }
+}
+
+/* ── RTL (Arabic) ───────────────────────────────────────────── */
+[dir="rtl"] body { font-family: 'DM Sans', 'Segoe UI', Tahoma, sans-serif; }
+[dir="rtl"] .hero-eyebrow::before,
+[dir="rtl"] .section-label::before { margin-left: 0; margin-right: 0; }
+[dir="rtl"] .how-step { border-right: none; border-left: 1px solid var(--border); }
+[dir="rtl"] .how-step:last-child { border-left: none; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Excell<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#concerns">Shop by Concern</a></li>
+    <li><a href="#kits">Protocol Kits</a></li>
+    <li><a href="#education">Learn</a></li>
+    <li><a href="#loyalty">Rewards</a></li>
+    <li><a href="#consult">Consult</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-lang" id="langToggle" onclick="toggleLang()">عربي</button>
+    <a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank" class="btn-cta-nav">Start Assessment →</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ─────────────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">✕</button>
+  <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+  <a href="#concerns" onclick="toggleMenu()">Shop by Concern</a>
+  <a href="#kits" onclick="toggleMenu()">Protocol Kits</a>
+  <a href="#education" onclick="toggleMenu()">Learn</a>
+  <a href="#loyalty" onclick="toggleMenu()">Rewards</a>
+  <a href="#consult" onclick="toggleMenu()">Consult</a>
+  <a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank">Start Assessment →</a>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Digital Twin Technology — GCC & Africa</div>
+    <h1 class="hero-title">
+      Your biology is<br>
+      <em>unique.</em>
+      <strong>Your supplements<br>should be too.</strong>
+    </h1>
+    <p class="hero-sub">
+      Excell Nutrients combines AI-powered Digital Twin diagnostics with clinically curated supplements and nutri-cosmetics — delivering precision home treatment protocols for aging, skin health, and chronic wellness.
+    </p>
+    <div class="hero-actions">
+      <a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank" class="btn-primary">
+        <span>Start Free Health Assessment</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#kits" class="btn-secondary">View Protocol Kits</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-dot"></div>100% Halal Certified</div>
+      <div class="trust-item"><div class="trust-dot"></div>GMP Manufactured</div>
+      <div class="trust-item"><div class="trust-dot"></div>Clinically Formulated</div>
+      <div class="trust-item"><div class="trust-dot"></div>500+ Protocol Variables</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="twin-card">
+      <div class="twin-header">
+        <span class="twin-label">Digital Twin Protocol</span>
+        <span class="twin-live">Live Engine</span>
+      </div>
+      <div class="twin-score-row">
+        <div class="twin-score-num">82</div>
+        <div class="twin-score-meta">
+          <div class="twin-score-label">Functional Health Score</div>
+          <div class="twin-score-sub">Biological age: 38 · ↑ Improving</div>
+        </div>
+      </div>
+      <div class="twin-domains">
+        <div class="domain-row">
+          <span class="domain-name">Cognitive</span>
+          <div class="domain-bar"><div class="domain-fill" style="width:78%"></div></div>
+          <span class="domain-val">78</span>
+        </div>
+        <div class="domain-row">
+          <span class="domain-name">Cardiovascular</span>
+          <div class="domain-bar"><div class="domain-fill" style="width:65%"></div></div>
+          <span class="domain-val">65</span>
+        </div>
+        <div class="domain-row">
+          <span class="domain-name">Metabolic</span>
+          <div class="domain-bar"><div class="domain-fill" style="width:82%"></div></div>
+          <span class="domain-val">82</span>
+        </div>
+        <div class="domain-row">
+          <span class="domain-name">Hormonal</span>
+          <div class="domain-bar"><div class="domain-fill gold" style="width:55%"></div></div>
+          <span class="domain-val">55</span>
+        </div>
+        <div class="domain-row">
+          <span class="domain-name">Sleep & Recovery</span>
+          <div class="domain-bar"><div class="domain-fill" style="width:70%"></div></div>
+          <span class="domain-val">70</span>
+        </div>
+        <div class="domain-row">
+          <span class="domain-name">Immunity</span>
+          <div class="domain-bar"><div class="domain-fill" style="width:88%"></div></div>
+          <span class="domain-val">88</span>
+        </div>
+      </div>
+      <div class="twin-protocol">
+        <div class="protocol-label">☀ AM Protocol</div>
+        <div class="protocol-pills">
+          <span class="protocol-pill">Omega-3</span>
+          <span class="protocol-pill">Magnesium</span>
+          <span class="protocol-pill">Ashwagandha</span>
+          <span class="protocol-pill">Vitamin D3</span>
+        </div>
+      </div>
+      <a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank" class="twin-cta">
+        Generate Your Protocol →
+      </a>
+      <div class="twin-footer">
+        <span class="twin-footer-item">✓ Free assessment</span>
+        <span class="twin-footer-item">✓ Under 10 minutes</span>
+        <span class="twin-footer-item">✓ No account needed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ─────────────────────────────────────────────── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Digital Twin Engine v31</span>
+    <span class="marquee-item">500+ Protocol Variables</span>
+    <span class="marquee-item">9 Health Domains</span>
+    <span class="marquee-item">100% Halal Certified</span>
+    <span class="marquee-item">GMP Manufactured</span>
+    <span class="marquee-item">Clinically Formulated</span>
+    <span class="marquee-item">Gluten Free</span>
+    <span class="marquee-item">UAE · KSA · East Africa</span>
+    <span class="marquee-item">Wearable Integration</span>
+    <span class="marquee-item">Daily Micro Check-ins</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Digital Twin Engine v31</span>
+    <span class="marquee-item">500+ Protocol Variables</span>
+    <span class="marquee-item">9 Health Domains</span>
+    <span class="marquee-item">100% Halal Certified</span>
+    <span class="marquee-item">GMP Manufactured</span>
+    <span class="marquee-item">Clinically Formulated</span>
+    <span class="marquee-item">Gluten Free</span>
+    <span class="marquee-item">UAE · KSA · East Africa</span>
+    <span class="marquee-item">Wearable Integration</span>
+    <span class="marquee-item">Daily Micro Check-ins</span>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ────────────────────────────────────────── -->
+<section class="how-section" id="how-it-works">
+  <div class="section-label">The Process</div>
+  <h2 class="section-title">From biology to <em>precision protocol</em></h2>
+  <p class="section-sub">Four phases. Hundreds of variables. One protocol built entirely around your biology — generated in seconds.</p>
+  <div class="how-grid reveal">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#2d6a4f" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#2d6a4f" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Biological Profiling</h3>
+      <p>4 phases of health questions capture your biomarkers, symptoms, lifestyle factors, and subjective wellbeing. The engine builds your complete health baseline.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="12" width="3" height="5" rx="1" fill="#2d6a4f" opacity="0.4"/><rect x="8.5" y="8" width="3" height="9" rx="1" fill="#2d6a4f" opacity="0.7"/><rect x="14" y="4" width="3" height="13" rx="1" fill="#2d6a4f"/></svg>
+      </div>
+      <h3>Domain Scoring</h3>
+      <p>Your responses are weighted across 9 health domains — Cognitive, Cardio, Metabolic, Hormonal, Immunity, Sleep, and more — each receiving a precision score.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M5 8l5-5 5 5" stroke="#2d6a4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="14" r="2" fill="#2d6a4f" opacity="0.5"/></svg>
+      </div>
+      <h3>Protocol Generation</h3>
+      <p>Safety vetoes, biometric tier weighting, and behaviour calibration applied simultaneously. Your AM + PM supplement protocol generated instantly.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">04</div>
+      <div class="how-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10c0-3.866 3.134-7 7-7s7 3.134 7 7-3.134 7-7 7-7-3.134-7-7z" stroke="#2d6a4f" stroke-width="1.5"/><path d="M10 6v4l2.5 2.5" stroke="#2d6a4f" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Adaptive Optimisation</h3>
+      <p>Daily micro check-ins and wearable biometric integration continuously refine your protocol as your body and lifestyle evolve over 90-day cycles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ───────────────────────────────────────────────── -->
+<div class="stats-section">
+  <div class="stats-grid reveal">
+    <div class="stat-block">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Protocol Variables</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Health Domains Scored</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Halal Certified</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Generic Formulas</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOP BY CONCERN ─────────────────────────────────────── -->
+<section id="concerns">
+  <div class="section-label">Personalised Solutions</div>
+  <h2 class="section-title">Shop by <em>health concern</em></h2>
+  <p class="section-sub">Every protocol is curated for your specific goals. Browse by condition or let the Digital Twin Engine decide for you.</p>
+  <div class="concerns-grid reveal">
+    <a href="shop.html?concern=aging" class="concern-card">
+      <span class="concern-icon">⏳</span>
+      <div class="concern-name">Healthy Aging</div>
+      <div class="concern-desc">NMN, NAD+, Resveratrol & longevity protocols</div>
+    </a>
+    <a href="shop.html?concern=skin" class="concern-card">
+      <span class="concern-icon">✨</span>
+      <div class="concern-name">Skin Health & Brightening</div>
+      <div class="concern-desc">Glutathione, Vitamin C, collagen & nutri-cosmetics</div>
+    </a>
+    <a href="shop.html?concern=diabetes" class="concern-card">
+      <span class="concern-icon">🩸</span>
+      <div class="concern-name">Blood Sugar & Metabolic</div>
+      <div class="concern-desc">Berberine, Chromium, Alpha Lipoic Acid protocols</div>
+    </a>
+    <a href="shop.html?concern=cardio" class="concern-card">
+      <span class="concern-icon">❤️</span>
+      <div class="concern-name">Cardiovascular Health</div>
+      <div class="concern-desc">CoQ10, Omega-3, Nattokinase & cardiac support</div>
+    </a>
+    <a href="shop.html?concern=joints" class="concern-card">
+      <span class="concern-icon">🦴</span>
+      <div class="concern-name">Joint & Bone Health</div>
+      <div class="concern-desc">Glucosamine, Chondroitin, Boswellia & MSM</div>
+    </a>
+    <a href="shop.html?concern=mens" class="concern-card">
+      <span class="concern-icon">⚡</span>
+      <div class="concern-name">Men's Health & Vitality</div>
+      <div class="concern-desc">Testosterone support, fertility & stamina protocols</div>
+    </a>
+    <a href="shop.html?concern=womens" class="concern-card">
+      <span class="concern-icon">🌸</span>
+      <div class="concern-name">Women's Wellness</div>
+      <div class="concern-desc">Hormonal balance, fertility, menopause & more</div>
+    </a>
+    <a href="shop.html?concern=cognitive" class="concern-card">
+      <span class="concern-icon">🧠</span>
+      <div class="concern-name">Brain & Cognitive</div>
+      <div class="concern-desc">Lion's Mane, Bacopa, Phosphatidylserine stacks</div>
+    </a>
+    <a href="shop.html?concern=hair" class="concern-card">
+      <span class="concern-icon">💆</span>
+      <div class="concern-name">Hair Growth</div>
+      <div class="concern-desc">Biotin, Saw Palmetto, Silica & scalp protocols</div>
+    </a>
+    <a href="shop.html?concern=eye" class="concern-card">
+      <span class="concern-icon">👁️</span>
+      <div class="concern-name">Eye Health</div>
+      <div class="concern-desc">Lutein, Zeaxanthin, Zinc & vision support</div>
+    </a>
+    <a href="shop.html?concern=weight" class="concern-card">
+      <span class="concern-icon">⚖️</span>
+      <div class="concern-name">Weight Management</div>
+      <div class="concern-desc">Metabolic support, thermogenics & GLP-1 stack</div>
+    </a>
+    <a href="shop.html?concern=sleep" class="concern-card">
+      <span class="concern-icon">🌙</span>
+      <div class="concern-name">Sleep & Recovery</div>
+      <div class="concern-desc">Magnesium, L-Theanine & circadian support</div>
+    </a>
+  </div>
+  <div style="text-align:center">
+    <a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank" class="btn-primary" style="display:inline-flex">
+      <span>Not sure? Let the engine decide for you</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── PROTOCOL KITS ───────────────────────────────────────── -->
+<section class="kits-section" id="kits">
+  <div class="section-label">Curated Bundles</div>
+  <h2 class="section-title">Treatment <em>protocol kits</em></h2>
+  <p class="section-sub">Condition-specific bundles curated by our clinical team — combining supplements and nutri-cosmetics into complete home treatment protocols.</p>
+  <div class="kits-grid reveal">
+    <div class="kit-card">
+      <div class="kit-tag">Aging & Longevity</div>
+      <h3>Advanced Anti-Aging Protocol</h3>
+      <p>Cellular rejuvenation stack targeting NAD+ pathways, mitochondrial health, and epigenetic aging markers.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">NMN 500mg</span>
+        <span class="kit-pill">Resveratrol</span>
+        <span class="kit-pill">CoQ10</span>
+        <span class="kit-pill">Vitamin D3+K2</span>
+        <span class="kit-pill">Omega-3</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 290 <small>/month</small></div>
+        <a href="kits.html#aging" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+    <div class="kit-card">
+      <div class="kit-tag">Skin Health</div>
+      <h3>Radiance & Brightening Protocol</h3>
+      <p>Inside-out skin protocol combining oral glutathione, vitamin C, collagen peptides, and topical serums.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">Glutathione 500mg</span>
+        <span class="kit-pill">Vitamin C</span>
+        <span class="kit-pill">Collagen Peptides</span>
+        <span class="kit-pill">Biotin</span>
+        <span class="kit-pill">Serum</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 245 <small>/month</small></div>
+        <a href="kits.html#skin" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+    <div class="kit-card">
+      <div class="kit-tag">Metabolic Health</div>
+      <h3>Blood Sugar Balance Protocol</h3>
+      <p>Precision metabolic support for blood glucose management, insulin sensitivity, and healthy weight maintenance.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">Berberine</span>
+        <span class="kit-pill">Chromium</span>
+        <span class="kit-pill">Alpha Lipoic Acid</span>
+        <span class="kit-pill">Magnesium</span>
+        <span class="kit-pill">Inositol</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 220 <small>/month</small></div>
+        <a href="kits.html#metabolic" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+    <div class="kit-card">
+      <div class="kit-tag">Men's Health</div>
+      <h3>Vitality & Stamina Protocol</h3>
+      <p>Evidence-based nutraceutical stack for male vitality, testosterone support, and physical performance.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">Ashwagandha</span>
+        <span class="kit-pill">Maca</span>
+        <span class="kit-pill">Zinc</span>
+        <span class="kit-pill">Panax Ginseng</span>
+        <span class="kit-pill">CoQ10</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 255 <small>/month</small></div>
+        <a href="kits.html#mens" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+    <div class="kit-card">
+      <div class="kit-tag">Women's Wellness</div>
+      <h3>Hormonal Balance Protocol</h3>
+      <p>Targeted support for hormonal equilibrium, menopause transition, and female reproductive wellness.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">Vitex</span>
+        <span class="kit-pill">Myo-Inositol</span>
+        <span class="kit-pill">Folate</span>
+        <span class="kit-pill">Magnesium</span>
+        <span class="kit-pill">Vitamin B6</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 235 <small>/month</small></div>
+        <a href="kits.html#womens" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+    <div class="kit-card">
+      <div class="kit-tag">Cognitive</div>
+      <h3>Brain & Focus Protocol</h3>
+      <p>Nootropic stack for memory, focus, and neuroprotection — clinically dosed for measurable cognitive outcomes.</p>
+      <div class="kit-ingredients">
+        <span class="kit-pill">Lion's Mane</span>
+        <span class="kit-pill">Bacopa</span>
+        <span class="kit-pill">Phosphatidylserine</span>
+        <span class="kit-pill">Ginkgo</span>
+        <span class="kit-pill">Omega-3</span>
+      </div>
+      <div class="kit-footer">
+        <div class="kit-price">AED 210 <small>/month</small></div>
+        <a href="kits.html#cognitive" class="kit-btn">View Kit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ───────────────────────────────────────────── -->
+<section id="education">
+  <div class="section-label">Excell Explains</div>
+  <h2 class="section-title">Science you can <em>actually understand</em></h2>
+  <p class="section-sub">Ingredient deep-dives, condition-specific guides, and expert video content — filterable by your health concern.</p>
+  <div class="edu-grid reveal">
+    <div class="edu-featured">
+      <div>
+        <div class="cat">Featured · Aging Science</div>
+        <h3>The NMN & NAD+ pathway: what the science actually says</h3>
+        <p>A deep dive into why NAD+ declines with age, how NMN supplementation affects cellular energy production, and what clinical evidence currently supports.</p>
+      </div>
+      <a href="education.html#nmn-nad" class="edu-read">Read the guide →</a>
+    </div>
+    <div class="edu-stack">
+      <a href="education.html#glutathione" class="edu-card">
+        <div class="edu-card-icon">✨</div>
+        <div class="edu-card-body">
+          <div class="cat">Skin Science</div>
+          <h4>Glutathione: the master antioxidant for skin brightening</h4>
+        </div>
+      </a>
+      <a href="education.html#berberine" class="edu-card">
+        <div class="edu-card-icon">🩸</div>
+        <div class="edu-card-body">
+          <div class="cat">Metabolic Health</div>
+          <h4>Berberine vs Metformin: a clinical comparison for blood sugar</h4>
+        </div>
+      </a>
+      <a href="education.html#ashwagandha" class="edu-card">
+        <div class="edu-card-icon">⚡</div>
+        <div class="edu-card-body">
+          <div class="cat">Men's Health</div>
+          <h4>Ashwagandha & testosterone: reviewing 12 clinical trials</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div style="margin-top:2rem; text-align:center">
+    <a href="education.html" class="btn-secondary" style="display:inline-flex">Browse All Articles & Guides →</a>
+  </div>
+</section>
+
+<!-- ── LOYALTY ─────────────────────────────────────────────── -->
+<section class="loyalty-section" id="loyalty">
+  <div class="section-label">Excell Circle</div>
+  <h2 class="section-title">Rewards that grow with <em>your health</em></h2>
+  <p class="section-sub">Earn points for every purchase, quiz completion, webinar, and review. Unlock exclusive benefits as you progress through the tiers.</p>
+  <div class="tiers-row reveal">
+    <div class="tier-card">
+      <div class="tier-badge">Tier 1</div>
+      <div class="tier-name">Vitality</div>
+      <div class="tier-desc">For new members just beginning their protocol journey.</div>
+      <ul class="tier-perks">
+        <li>Access to full Education Library</li>
+        <li>Points on every purchase</li>
+        <li>Points for quiz completions</li>
+        <li>Early access to new protocols</li>
+        <li>Monthly ingredient spotlight</li>
+      </ul>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-badge">Tier 2 · Most Popular</div>
+      <div class="tier-name">Resilience</div>
+      <div class="tier-desc">For committed members completing 90-day protocols.</div>
+      <ul class="tier-perks">
+        <li>Everything in Vitality</li>
+        <li>1 free expert consultation</li>
+        <li>Free product samples quarterly</li>
+        <li>Premium webinar access</li>
+        <li>Priority WhatsApp support</li>
+        <li>10% discount on bundles</li>
+      </ul>
+    </div>
+    <div class="tier-card">
+      <div class="tier-badge">Tier 3</div>
+      <div class="tier-name">Longevity</div>
+      <div class="tier-desc">For long-term members deeply invested in their health.</div>
+      <ul class="tier-perks">
+        <li>Everything in Resilience</li>
+        <li>Full protocol customisation</li>
+        <li>Monthly 1:1 expert chat</li>
+        <li>Wearable integration access</li>
+        <li>Exclusive bundles & formulas</li>
+        <li>20% discount on all products</li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2.5rem">
+    <a href="loyalty.html" class="btn-primary" style="display:inline-flex">
+      <span>Join Excell Circle — It's Free</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── CONSULT ─────────────────────────────────────────────── -->
+<section class="consult-section" id="consult">
+  <div class="consult-inner">
+    <div>
+      <div class="section-label">Expert Consultations</div>
+      <h2 class="section-title">Talk to our <em>clinical team</em></h2>
+      <p class="section-sub">
+        Free consultation included with every protocol kit purchase. Our experts review your Digital Twin assessment and tailor your protocol further — via video call or WhatsApp.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:1rem">
+        <div class="trust-item" style="font-size:0.85rem">
+          <div class="trust-dot" style="background:var(--gold)"></div>
+          Free with any kit purchase
+        </div>
+        <div class="trust-item" style="font-size:0.85rem">
+          <div class="trust-dot" style="background:var(--gold)"></div>
+          Video call or WhatsApp
+        </div>
+        <div class="trust-item" style="font-size:0.85rem">
+          <div class="trust-dot" style="background:var(--gold)"></div>
+          Response within 24 hours
+        </div>
+        <div class="trust-item" style="font-size:0.85rem">
+          <div class="trust-dot" style="background:var(--gold)"></div>
+          Arabic & English support
+        </div>
+      </div>
+      <div style="margin-top:2rem">
+        <div class="section-label" style="font-size:0.65rem;margin-bottom:0.8rem">Our locations</div>
+        <p style="font-size:0.8rem;color:var(--ink-soft);line-height:1.8">
+          <strong>UAE:</strong> Compass Building, Al Hamra Industrial Zone-FZ, Ras Al Khaimah<br>
+          <strong>Dubai:</strong> Aspin Commercial Tower, Sheikh Zayed Rd, Trade Center<br>
+          <strong>KSA:</strong> Al Malaz District, Riyadh · +966 563 080 848<br>
+          <strong>East Africa:</strong> Mic Building, Kigali · +250 790 246 983<br>
+          <strong>Email:</strong> sales@excellnutrients.com
+        </p>
+      </div>
+    </div>
+    <div class="consult-form">
+      <h3>Book a consultation</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Ahmed">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Al Rashid">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp</label>
+        <input type="tel" placeholder="+971 50 000 0000">
+      </div>
+      <div class="form-group">
+        <label>Health Concern</label>
+        <select>
+          <option>Select your primary concern</option>
+          <option>Healthy Aging & Longevity</option>
+          <option>Skin Health & Brightening</option>
+          <option>Blood Sugar & Metabolic</option>
+          <option>Cardiovascular Health</option>
+          <option>Men's Health & Vitality</option>
+          <option>Women's Wellness</option>
+          <option>Brain & Cognitive</option>
+          <option>Joint & Bone Health</option>
+          <option>Weight Management</option>
+          <option>Hair Growth</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Contact Method</label>
+        <select>
+          <option>WhatsApp</option>
+          <option>Video Call</option>
+          <option>Email</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (optional)</label>
+        <textarea placeholder="Tell us about your health goals or questions…"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center" onclick="submitConsult(event)">
+        <span>Request Consultation</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p style="font-size:0.72rem;color:var(--ink-muted);text-align:center;margin-top:10px">We respond within 24 hours. Your information is never shared.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">Excell<span>.</span></span>
+      <p>Precision health and beauty protocols powered by AI Digital Twin technology. Clinically formulated, Halal certified, and built for GCC & Africa.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/excellnutrients" target="_blank" class="social-btn">in</a>
+        <a href="https://x.com/Excellnutrients" target="_blank" class="social-btn">𝕏</a>
+        <a href="https://www.pinterest.com/excellnutrients/" target="_blank" class="social-btn">P</a>
+        <a href="https://wa.me/971509172876" target="_blank" class="social-btn">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="https://phytomedixdev.github.io/phytomedix-twin-Claude/" target="_blank">Digital Twin Assessment</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#kits">Protocol Kits</a></li>
+        <li><a href="#concerns">Shop by Concern</a></li>
+        <li><a href="#loyalty">Excell Circle</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="education.html">Education Hub</a></li>
+        <li><a href="education.html#ingredients">Ingredient Science</a></li>
+        <li><a href="education.html#videos">Excell Explains</a></li>
+        <li><a href="education.html#webinars">Webinars</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#consult">Contact</a></li>
+        <li><a href="about.html#experts">Expert Panel</a></li>
+        <li><a href="partners.html">Partner Programme</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Excell Nutrients. All rights reserved. Digital Twin Engine powered by Phytomedix technology.</p>
+    <div class="footer-certs">
+      <span class="cert-badge">Halal Certified</span>
+      <span class="cert-badge">GMP</span>
+      <span class="cert-badge">Gluten Free</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────────────── -->
+<script>
+// Nav scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.toggle('open');
+  menu.style.display = isOpen ? 'flex' : 'none';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+document.getElementById('mobileMenu').style.display = 'none';
+
+// Language toggle (EN ↔ AR)
+let isAr = false;
+const translations = {
+  heroTitle: {
+    en: 'Your biology is <br><em>unique.</em><strong>Your supplements<br>should be too.</strong>',
+    ar: 'بيولوجيتك <br><em>فريدة.</em><strong>مكملاتك<br>يجب أن تكون كذلك.</strong>'
+  }
+};
+function toggleLang() {
+  isAr = !isAr;
+  document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('lang', isAr ? 'ar' : 'en');
+  document.getElementById('langToggle').textContent = isAr ? 'English' : 'عربي';
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// Consult form
+function submitConsult(e) {
+  e.preventDefault();
+  const btn = e.currentTarget;
+  const span = btn.querySelector('span');
+  span.textContent = 'Request Sent ✓';
+  btn.style.background = '#40916c';
+  setTimeout(() => {
+    span.textContent = 'Request Consultation';
+    btn.style.background = '';
+  }, 3000);
+}
+
+// Animate domain bars on scroll
+const domainFills = document.querySelectorAll('.domain-fill');
+const domainObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, { threshold: 0.3 });
+domainFills.forEach(el => {
+  el.style.animationPlayState = 'paused';
+  domainObserver.observe(el);
+});
+</script>
+</body>
+</html>
